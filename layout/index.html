@@ -5,9 +5,14 @@
   <title>index_demo</title>
   <link href="css/bootstrap-combined.min.css" rel="stylesheet">
   <link href="css/layoutit.css" rel="stylesheet">
-  <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
-  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./js/jquery-ui.js"></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/reset_base.css" rel="stylesheet">
+
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+
 </head>
 
 <body class="edit">
@@ -59,8 +64,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <!-- sidebar-nav start -->
-    <div>
-        <div class="sidebar-nav">
+    <div class="sidebar-nav">
         <ul class="nav nav-list accordion-group">
           <li class="nav-header">
             <div class="pull-right popover-info">
@@ -271,7 +275,10 @@
               </div>
             </div>
             <div class="box box-element ui-draggable">
-              <a rel="nofollow" href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>删除</a> <span class="drag label"><i class="icon-move icon-white"></i>拖动</span>
+              <a rel="nofollow" href="#close" class="remove label label-important">
+                <i class="icon-remove icon-white"></i>删除
+              </a> 
+              <span class="drag label"><i class="icon-move icon-white"></i>拖动</span>
               <span class="configuration"><button type="button" class="btn btn-mini" data-target="#editorModal" role="button" data-toggle="modal">编辑</button></span>
               <div class="preview">表格</div>
               <div class="view">
@@ -311,8 +318,11 @@
                   </table>
                 </div>
                 <div class="page clearfix">
-                  <div class="allNum clearfix"><span class="fl">共</span><em class="c_333 fl mr5 ml5"> 1234 </em><span class="fl">条</span> </div>
-                  <ul class="pageList clearfix">
+                  <div class="allNum clearfix">
+                    <span class="fl">共</span>
+                    <em class="c_333 fl mr5 ml5"> 1234 </em>
+                    <span class="fl">条</span> </div>
+                  <ul class="pagination pageList clearfix">
                     <li class="prev"><a class="dis" href=""><i class="fa fa-angle-left f20"></i></a></li>
                     <li><a class="cur">1</a></li>
                     <li><a href="">2</a></li>
@@ -326,7 +336,7 @@
                     <div class="fl mr5">
                       <span class="fl mr5">每页</span>
                       <div class="fl pageSelect mt6 ">
-                      <select name="" id="" class="select-page" style="width:50px;">
+                      <select name="" id="" class="select-page" style="width:50px; height:22px">
                         <option value="1">10</option>
                         <option value="2">20</option>
                         <option value="3">50</option>
@@ -385,7 +395,6 @@
             </div>
           </li>
         </ul>
-      </div>
     </div>
     <!-- sidebar-nav end -->
 
