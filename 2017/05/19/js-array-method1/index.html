@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])  作用：将别的一个或多个数组与原数组相连接  返回值： 新数组。（不改变原数组内容） 是否改变原数组： 否 是否浅拷贝： 是  12345var arr1 = [0,1,2];var arr2 = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];va">
+<meta name="description" content="concat(),push(),shift() 与 pop() 的使用  1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])  作用：将别的一个或多个数组与原数组相连接  返回值： 新数组。（不改变原数组内容） 是否改变原数组： 否 是否浅拷贝： 是  12345var arr1">
 <meta name="keywords" content="js,array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js-数组 concat(),push(),shift() 与 pop() 的使用">
+<meta property="og:title" content="array-数组方法(1)">
 <meta property="og:url" content="www.sugar1075.online/2017/05/19/js-array-method1/index.html">
 <meta property="og:site_name" content="唐唐的个人小站">
-<meta property="og:description" content="1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])  作用：将别的一个或多个数组与原数组相连接  返回值： 新数组。（不改变原数组内容） 是否改变原数组： 否 是否浅拷贝： 是  12345var arr1 = [0,1,2];var arr2 = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];va">
-<meta property="og:updated_time" content="2017-05-19T09:11:29.000Z">
+<meta property="og:description" content="concat(),push(),shift() 与 pop() 的使用  1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])  作用：将别的一个或多个数组与原数组相连接  返回值： 新数组。（不改变原数组内容） 是否改变原数组： 否 是否浅拷贝： 是  12345var arr1">
+<meta property="og:updated_time" content="2017-05-19T09:50:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js-数组 concat(),push(),shift() 与 pop() 的使用">
-<meta name="twitter:description" content="1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])  作用：将别的一个或多个数组与原数组相连接  返回值： 新数组。（不改变原数组内容） 是否改变原数组： 否 是否浅拷贝： 是  12345var arr1 = [0,1,2];var arr2 = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];va">
+<meta name="twitter:title" content="array-数组方法(1)">
+<meta name="twitter:description" content="concat(),push(),shift() 与 pop() 的使用  1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])  作用：将别的一个或多个数组与原数组相连接  返回值： 新数组。（不改变原数组内容） 是否改变原数组： 否 是否浅拷贝： 是  12345var arr1">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>js-数组 concat(),push(),shift() 与 pop() 的使用 | 唐唐的个人小站</title>
+  <title>array-数组方法(1) | 唐唐的个人小站</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,16 +216,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -242,16 +232,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-search">
-          <a href="/search" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            搜索
           </a>
         </li>
       
@@ -301,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js-数组 concat(),push(),shift() 与 pop() 的使用</h1>
+          <h1 class="post-title" itemprop="name headline">array-数组方法(1)</h1>
         
 
         <div class="post-meta">
@@ -381,7 +361,10 @@
       
 
       
-        <h2 id="1-array-concat"><a href="#1-array-concat" class="headerlink" title="1. array.concat"></a>1. <code>array.concat</code></h2><p>语法： <code>var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])</code> </p>
+        <blockquote>
+<p>concat(),push(),shift() 与 pop() 的使用</p>
+</blockquote>
+<h2 id="1-array-concat"><a href="#1-array-concat" class="headerlink" title="1. array.concat"></a>1. <code>array.concat</code></h2><p>语法： <code>var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])</code> </p>
 <p>作用：将别的一个或多个数组与原数组相连接</p>
 <ul>
 <li>返回值： 新数组。（不改变原数组内容）</li>
@@ -470,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/19/js-array-method2/" rel="next" title="js-数组 forEach()，map()；slice()，splice() 的使用">
-                <i class="fa fa-chevron-left"></i> js-数组 forEach()，map()；slice()，splice() 的使用
+              <a href="/2017/05/19/js-array-method2/" rel="next" title="array-数组方法(2)">
+                <i class="fa fa-chevron-left"></i> array-数组方法(2)
               </a>
             
           </div>
@@ -561,7 +544,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -572,7 +555,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

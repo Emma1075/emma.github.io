@@ -216,16 +216,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -242,16 +232,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-search">
-          <a href="/search" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            搜索
           </a>
         </li>
       
@@ -303,7 +283,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/19/js-array-method1/" itemprop="url">js-数组 concat(),push(),shift() 与 pop() 的使用</a></h1>
+                <a class="post-title-link" href="/2017/05/19/js-array-method1/" itemprop="url">array-数组方法(1)</a></h1>
         
 
         <div class="post-meta">
@@ -385,53 +365,21 @@
       
         
           
-            <h2 id="1-array-concat"><a href="#1-array-concat" class="headerlink" title="1. array.concat"></a>1. <code>array.concat</code></h2><p>语法： <code>var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])</code> </p>
-<p>作用：将别的一个或多个数组与原数组相连接</p>
-<ul>
-<li>返回值： 新数组。（不改变原数组内容）</li>
-<li>是否改变原数组： 否</li>
-<li>是否浅拷贝： 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = arr1.concat(arr2);   </div><div class="line"><span class="built_in">console</span>.log(arr3)；    <span class="comment">//[0,1,2,"a","b","c"]，原数组arr1不受影响</span></div></pre></td></tr></table></figure>
-<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>a. 不同于<code>push</code>，<code>concat</code>多个数组时，只返回一维数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//比较:push()与concat()</span></div><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr4 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr4);      <span class="comment">// [0,1,2,3,4,5]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr5 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr5);      <span class="comment">// 5 push操作返回值是新数组length</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0,1,2,3,[4,5]]   arr1发生改变</span></div></pre></td></tr></table></figure>
-<p>b. shandow copy ：浅拷贝</p>
-<blockquote>
-<p>浅拷贝，只是对指针的拷贝，拷贝后两个指针指向同一个内存空间，深拷贝不但对指针进行拷贝，而且对指针指向的内容进行拷贝，经深拷贝后的指针是指向两个不同地址的指针。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>],arr2);</div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// [0, 1, 2, 3, 4, 5, 6, [7,8]]</span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2[1]的值后，arr3会随之改变</span></div><div class="line">arr2[<span class="number">1</span>].push(<span class="number">9</span>);    <span class="comment">// arr2:[6,[7,8,9]]</span></div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// arr3:[0, 1, 2, 3, 4, 5, 6, [7,8,9]]</span></div><div class="line"></div><div class="line"><span class="comment">//同理：改变arr3[arr3.length-1]的值后，arr2也会随之改变</span></div><div class="line">arr3[arr3.length<span class="number">-1</span>][<span class="number">0</span>] = <span class="number">10</span>;  <span class="comment">// arr3:[0, 1, 2, 3, 4, 5, 6, [10,8,9]]</span></div><div class="line"><span class="built_in">console</span>.log(arr2);      <span class="comment">//arr2: [6,[10,8,9]]</span></div></pre></td></tr></table></figure>
-<hr>
-<h2 id="2-array-push"><a href="#2-array-push" class="headerlink" title="2.array.push"></a>2.<code>array.push</code></h2><p>语法： <code>arr.push(element1, ..., elementN)</code></p>
-<p>作用：在原数组末尾添加元素或数组</p>
-<ul>
-<li>返回值： 新数组length值</li>
-<li>是否改变原数组：是</li>
-<li>是否浅拷贝： 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> newLen_1 = arr1.push(arr2);    <span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1,2,[3,4]] </span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2，arr1会发生改变</span></div><div class="line">arr2.push(<span class="number">5</span>);   <span class="comment">//arr2:[3,4,5]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//arr1:[0,1,2,[3,4,5]]</span></div></pre></td></tr></table></figure>
-<h2 id="3-array-pop"><a href="#3-array-pop" class="headerlink" title="3.array.pop"></a>3.<code>array.pop</code></h2><p>语法： <code>arr.pop()</code></p>
-<p>作用： 删除数组最末尾的元素</p>
-<ul>
-<li>返回值： 删除的元素</li>
-<li>是否改变原数组： 是 </li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> poped = arr1.pop();   </div><div class="line"><span class="built_in">console</span>.log(poped);  <span class="comment">//2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1]</span></div></pre></td></tr></table></figure>
-<h2 id="4-array-unshift"><a href="#4-array-unshift" class="headerlink" title="4.array.unshift"></a>4.<code>array.unshift</code></h2><p>语法：<code>arr.unshift([element1[, ...[, elementN]]])</code></p>
-<p>作用： 在数组最开始位置添加元素（跟<code>push()</code>刚好相反）</p>
-<ul>
-<li>返回值 ：新数组长度</li>
-<li>是否改变原数组： 是</li>
-<li>是否浅拷贝： 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> newLen_1 = arr1.unshift(arr2);    <span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[[3,4]，0,1,2] </span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2，arr1会发生改变</span></div><div class="line">arr2.unshift(<span class="number">5</span>);   <span class="comment">//arr2:[5,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//arr1:[[5,3,4],0,1,2]</span></div></pre></td></tr></table></figure>
-<h2 id="5-array-shift"><a href="#5-array-shift" class="headerlink" title="5.array.shift"></a>5.<code>array.shift</code></h2><p>语法：<code>arr.shift()</code></p>
-<p>作用：删除数组第一个元素（同<code>pop()</code>刚好相反）</p>
-<ul>
-<li>返回值： 删除的元素</li>
-<li>是否改变原数组： 是 </li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> poped = arr1.shift();   </div><div class="line"><span class="built_in">console</span>.log(poped);  <span class="comment">//0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[1,2]</span></div></pre></td></tr></table></figure>
           
+concat(),push(),shift() 与 pop() 的使用
+
+1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]]) 
+作用：将别的一个或多个数组与原数组相连接
+
+返回值：
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/19/js-array-method1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -492,7 +440,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/19/js-array-method2/" itemprop="url">js-数组 forEach()，map()；slice()，splice() 的使用</a></h1>
+                <a class="post-title-link" href="/2017/05/19/js-array-method2/" itemprop="url">array-数组方法(2)</a></h1>
         
 
         <div class="post-meta">
@@ -574,53 +522,19 @@
       
         
           
-            <h3 id="1-forEach-——-遍历"><a href="#1-forEach-——-遍历" class="headerlink" title="1.forEach —— 遍历"></a>1.forEach —— 遍历</h3><p>forEach遍历数组，对原来的数据操作，改变原数组</p>
-<p>函数声明：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].forEach( <span class="function"><span class="keyword">function</span>(<span class="params">value, index, array</span>) </span>&#123; </div><div class="line">    <span class="comment">//… </span></div><div class="line">&#125;, [thisArg] );</div></pre></td></tr></table></figure></p>
-<ol>
-<li>forEach方法中第一个参数是回调函数，它支持3个参数：</li>
-</ol>
-<ul>
-<li>第1个是遍历的数组内容</li>
-<li>第2个是对应索引</li>
-<li>第3个是数组自身</li>
-</ul>
-<p><strong>注意</strong>：对比jQuery中的$.each方法，参数位置有变化(第1个参数和第2个刚好相反)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.each([], <span class="function"><span class="keyword">function</span>(<span class="params">index, value, array</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p>eg1:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, <span class="number">2</span> ,<span class="number">3</span>, <span class="number">4</span>].forEach(<span class="built_in">console</span>.log);</div><div class="line"><span class="comment">// 1, 0, [1, 2, 3, 4]</span></div><div class="line"><span class="comment">// 2, 1, [1, 2, 3, 4]</span></div><div class="line"><span class="comment">// 3, 2, [1, 2, 3, 4]</span></div><div class="line"><span class="comment">// 4, 3, [1, 2, 3, 4]</span></div></pre></td></tr></table></figure></p>
-<p>eg2:数组求和<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>].forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item, index, array</span>) </span>&#123;</div><div class="line">  sum += item;      <span class="comment">//注：(array[index] == item)为 true</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(sum); <span class="comment">// 10</span></div></pre></td></tr></table></figure></p>
-<p>2.第二个参数thisArg可选，可用于以改变回调函数里面的this指针 ：如果这第2个可选参数不指定，则使用全局对象代替（在浏览器是为window），严格模式下甚至是undefined.</p>
-<h3 id="2-map-——-映射"><a href="#2-map-——-映射" class="headerlink" title="2.map —— 映射"></a>2.map —— 映射</h3><p>映射，创建新数组</p>
-<p>函数声明：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].map( <span class="function"><span class="keyword">function</span>(<span class="params">value, index, array</span>) </span>&#123;</div><div class="line">    <span class="comment">//… </span></div><div class="line">&#125;, [thisArg] );</div></pre></td></tr></table></figure></p>
-<p>类似于forEach，但需要注意的是：<strong>回调函数需要有return值，否则新数组都是undefined</strong></p>
-<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h5><p>eg1：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//求平方值</span></div><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> arrayOfSquares = data.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item * item;       <span class="comment">//必须要有return</span></div><div class="line">&#125;);</div><div class="line">alert(arrayOfSquares); <span class="comment">// 1, 4, 9, 16</span></div></pre></td></tr></table></figure></p>
-<p>eg2：可以利用map方法方便获得对象数组中的特定属性值们<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> users = [</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">"张含韵"</span>, <span class="string">"email"</span>: <span class="string">"zhang@email.com"</span>&#125;,</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">"江一燕"</span>,   <span class="string">"email"</span>: <span class="string">"jiang@email.com"</span>&#125;,</div><div class="line">  &#123;<span class="attr">name</span>: <span class="string">"李小璐"</span>,  <span class="string">"email"</span>: <span class="string">"li@email.com"</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">var</span> emails = users.map(<span class="function"><span class="keyword">function</span> (<span class="params">user</span>) </span>&#123; <span class="keyword">return</span> user.email; &#125;);</div><div class="line"><span class="built_in">console</span>.log(emails.join(<span class="string">", "</span>)); <span class="comment">// zhang@email.com, jiang@email.com, li@email.com</span></div></pre></td></tr></table></figure></p>
-<h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p>map能做的事forEach都能做，map可以视为forEach的一个特例，专门用于“通过现有的数组建立新数组”。在没有map之前是通过forEach来创建新数组。需要预先定义空数组，再通过push操作添加元素。有map之后，更进一步优化代码了。</p>
-<h3 id="for循环优点"><a href="#for循环优点" class="headerlink" title="for循环优点"></a>for循环优点</h3><ul>
-<li>可随意跳出或退出循环</li>
-<li>for 循环还可以隔几个去取值</li>
-</ul>
-<h2 id="1-array-slice"><a href="#1-array-slice" class="headerlink" title="1.array.slice"></a>1.<code>array.slice</code></h2><p>语法：<code>arr.slice([begin[,end]])</code></p>
-<p>作用：从已有的数组中返回选定的元素。主要用于复制，可传入1或2个参数。</p>
-<ul>
-<li>返回值： 新数组</li>
-<li>是否改变原数组： 否</li>
-<li>是否为浅拷贝： 是</li>
-<li>参数传递个数：<ul>
-<li>0 —— 浅拷贝得到一个新数组（用于复制）</li>
-<li>1 —— 复制从该位置到数组末尾的数组项</li>
-<li>2 —— 复制从第一个参数到第二个参数为止的数组项，不包括最后一项</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> arr2 = arr1.slice();    <span class="comment">//不传参，arr2为arr1的浅拷贝 arr2：[0,1,2,3]</span></div><div class="line"><span class="keyword">var</span> arr3 = arr1.slice(<span class="number">1</span>);   <span class="comment">//只传1个参数  arr3:[1,2,3]</span></div><div class="line"><span class="keyword">var</span> arr4 = arr1.slice(<span class="number">1</span>,<span class="number">3</span>); <span class="comment">//传2个参数，复制arr1[1]到arr1[3]之间的的数组项，但不包括arr1[3]。arr3:[1,2]</span></div></pre></td></tr></table></figure>
-<h2 id="2-array-splice"><a href="#2-array-splice" class="headerlink" title="2.array.splice"></a>2.<code>array.splice</code></h2><p>语法：<code>arr.splice(start, deleteCount[, item1[, item2[, ...]]])</code></p>
-<p>作用： 插入、删除或替换数组的元素。该方法可删除从start处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换哪些被删除的元素</p>
-<ul>
-<li>返回值： 被删除的元素组成的数组</li>
-<li>是否改变原数组：是</li>
-<li>是否为浅拷贝: 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="comment">//只删除</span></div><div class="line"><span class="keyword">var</span> delElement1 = arr1.splice(<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//删除arr1中从arr1[1]开始的两个元素</span></div><div class="line"><span class="built_in">console</span>.log(delElement1);    <span class="comment">//[1,2];delElement1.length = 2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,3]</span></div><div class="line"></div><div class="line"><span class="comment">//只增加</span></div><div class="line"><span class="keyword">var</span> delElement2 = arr1.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">5</span>);  <span class="comment">//从arr1[1]开始删除0个元素，并在此位置新增4,5两个元素</span></div><div class="line"><span class="built_in">console</span>.log(delElement2);    <span class="comment">//[]；delElement2.length = 0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,4,5,3]</span></div><div class="line"></div><div class="line"><span class="comment">//只替换</span></div><div class="line"><span class="keyword">var</span> delElement3 = arr1.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//从arr1[1]开始删除2个元素，并在此位置新增1,2两个元素（删除2个再新增2个，即替换）</span></div><div class="line"><span class="built_in">console</span>.log(delElement3);    <span class="comment">//[4,5]；delElement3.length = 2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1,2,3]</span></div><div class="line"></div><div class="line"><span class="comment">//浅拷贝</span></div><div class="line"><span class="keyword">var</span> arrTemp = [<span class="string">"a"</span>,<span class="string">"b"</span>]</div><div class="line"><span class="keyword">var</span> delEle = arr1.splice(<span class="number">1</span>,<span class="number">0</span>,arrTemp);  <span class="comment">//[];delEle.length = 0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0, ["a","b"], 1, 2, 3]</span></div><div class="line">arrTemp.push(<span class="string">"c"</span>);      <span class="comment">//arrTemp:  ["a","b","c"]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0, ["a","b","c"], 1, 2, 3]</span></div></pre></td></tr></table></figure>
           
+forEach()，map()；slice()，splice() 的使用
+
+1.forEach —— 遍历forEach遍历数组，对原来的数据操作，改变原数组
+函数声明：123[].forEach( function(value, index, array) &#123;     //… &#12
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/19/js-array-method2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -681,7 +595,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/19/js-array/" itemprop="url">array 数组去重</a></h1>
+                <a class="post-title-link" href="/2017/05/19/js-array/" itemprop="url">array-数组去重</a></h1>
         
 
         <div class="post-meta">
@@ -763,29 +677,18 @@
       
         
           
-            <blockquote>
-<p>部分方法来自于网上看到的优秀代码，加了自己的理解和补充。（算部分原创吧~）</p>
-</blockquote>
-<h4 id="1-方法一：-用for循环删除后面重复的"><a href="#1-方法一：-用for循环删除后面重复的" class="headerlink" title="1.方法一： 用for循环删除后面重复的"></a>1.方法一： 用for循环删除后面重复的</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqueFor</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</div><div class="line">        item = arr[i];</div><div class="line">        <span class="comment">//每取一个item，就对它后面的所有元素进行遍历，将后面与之重复的元素都删掉</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (item === arr[j]) &#123;</div><div class="line">                arr.splice(j,<span class="number">1</span>);        <span class="comment">//array.splice 方法改变原数组</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line">uniqueFor([<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>]); <span class="comment">//[1,3,2]</span></div></pre></td></tr></table></figure>
-<p>注解：此方法虽然可行，但不推荐。循环次数过多。</p>
-<h4 id="2-方法二：利用array-filter方法过滤重复项"><a href="#2-方法二：利用array-filter方法过滤重复项" class="headerlink" title="2.方法二：利用array.filter方法过滤重复项"></a>2.方法二：利用<code>array.filter</code>方法过滤重复项</h4><p>用到的知识：<code>indexOf()</code>、<code>filter()</code><br><strong> <code>array.indexOf</code></strong><br>语法：<br><code>arr.indexOf(searchElement[, fromIndex = 0])</code></p>
-<ul>
-<li><code>searchElement</code>:要查找的元素</li>
-<li><code>fromIndex</code>：可选参数。表示开始查找的位置、</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqueFilter</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="comment">//对数组arr进行filter操作，筛选，ele是arr中元素，pos是ele元素对应的索引，array是被遍历的arr本身</span></div><div class="line">    <span class="keyword">return</span> arr.filter (<span class="function"><span class="keyword">function</span>(<span class="params">ele, pos, array</span>)</span>&#123;</div><div class="line">        <span class="comment">//返回true则表示保留该元素，false则不保留</span></div><div class="line">        <span class="keyword">return</span> array.indexOf(ele,pos + <span class="number">1</span>) === <span class="number">-1</span>;</div><div class="line">    &#125;)</div><div class="line">&#125;</div><div class="line">uniqueFilter([<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>]);</div></pre></td></tr></table></figure>
-<p>注解：推荐此方法。代码非常优雅简洁。但需要对数组的<code>filter()</code>方法与<code>indexOf()</code>都比较熟练。</p>
-<h5 id="深入理解indexOf-ele-pos-1-1"><a href="#深入理解indexOf-ele-pos-1-1" class="headerlink" title="深入理解indexOf(ele, pos + 1)=== -1"></a>深入理解<code>indexOf(ele, pos + 1)=== -1</code></h5><p>在下面的<code>uniqueFilter()</code>函数中，要查找的是索引为pos的元素<code>ele</code>，且从索引为<code>pos + 1</code>的位置开始查找(即：查找ele后面的所有元素)，</p>
-<ul>
-<li>若<code>indexOf(ele, pos + 1)</code>返回的值为1，则说明在ele后面还有与其值相同的元素； 故<code>indexOf(ele, pos + 1) === -1</code>返回<code>false</code>；故由<code>filter()</code>方法可知：返回false的值不再保留。由此可对arr进行去重</li>
-<li>同理：若<code>indexOf(ele, pos + 1)</code>返回的值为-1，则<code>indexOf(ele, pos + 1) === -1</code>返回<code>true</code>；则经<code>filter()</code>方法后，该元素在arr中保留并作为返回值返回，表示该ele在arr中唯一</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[<span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].indexOf(<span class="number">5</span>,<span class="number">1</span>);    <span class="comment">//表示从数组的第二项开始查找，显然，返回的值为1；</span></div><div class="line">[<span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].indexOf(<span class="number">5</span>,<span class="number">2</span>);    <span class="comment">//表示从数组的第三项开始查找，显然，返回的值为-1；</span></div><div class="line"><span class="comment">//因此，我们可以得到：</span></div><div class="line">[<span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].indexOf(<span class="number">5</span>,<span class="number">1</span>) === <span class="number">-1</span>;    <span class="comment">//返回值为false</span></div><div class="line">[<span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].indexOf(<span class="number">5</span>,<span class="number">2</span>) === <span class="number">-1</span>;    <span class="comment">//返回的值true；</span></div></pre></td></tr></table></figure>
-<h4 id="3-根据对象属性的唯一性"><a href="#3-根据对象属性的唯一性" class="headerlink" title="3.根据对象属性的唯一性"></a>3.根据对象属性的唯一性</h4><p>由于对象的key永远是唯一的，不会有重复。故可将arr[i]的值作为obj的key，对象中的所有key即为arr元素去重后的结果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqueObj</span> (<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> outputArr = [],</div><div class="line">        obj = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> item;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</div><div class="line">        item = arr[i];</div><div class="line">        <span class="keyword">if</span> (obj[item])&#123;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            outputArr.push(item);</div><div class="line">            obj[item] = <span class="literal">true</span>;   <span class="comment">//push之后一定要记得给obj[item]赋值</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> outputArr;</div><div class="line">&#125;</div><div class="line">uniqueObj([<span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>]);  <span class="comment">//[5, 8, 130, 44]</span></div></pre></td></tr></table></figure>
-<p>注解：此方法我认为最机智。利用key值得唯一性，既容易让人理解又很高效。唯一需要注意的是不要忘了<code>push</code>操作之后给<code>obj[item]</code>赋值。</p>
-
           
+部分方法来自于网上看到的优秀代码，加了自己的理解和补充。（算部分原创吧~）
+
+1.方法一： 用for循环删除后面重复的12345678910111213function uniqueFor (arr) &#123;    for (var i = 0, len = arr.length; i &l
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/19/js-array/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -874,7 +777,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -885,7 +788,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
