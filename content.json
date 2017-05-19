@@ -1,1 +1,1 @@
-[{"title":"demo","date":"2017-05-19T06:22:19.000Z","path":"2017/05/19/demo/","tags":[]},{"title":"Hello World","date":"2017-05-19T04:00:59.000Z","path":"2017/05/19/hello-world/","tags":[]}]
+[{"title":"demo","date":"2017-05-19T06:22:19.000Z","path":"2017/05/19/demo/","tags":[{"name":"test","slug":"test","permalink":"http://yoursite.com/tags/test/"},{"name":"demo","slug":"demo","permalink":"http://yoursite.com/tags/demo/"}]},{"title":"Hello World","date":"2017-05-19T04:00:59.000Z","path":"2017/05/19/hello-world/","tags":[]}]
