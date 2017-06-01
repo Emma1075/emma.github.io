@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="sugar，emma1075" />
 
 
 
@@ -92,12 +92,12 @@
 
 <meta name="description" content="sugar1075 blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="唐唐的个人小站">
+<meta property="og:title" content="Sugar&#39;s Blog">
 <meta property="og:url" content="www.sugar1075.online/index.html">
-<meta property="og:site_name" content="唐唐的个人小站">
+<meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="sugar1075 blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="唐唐的个人小站">
+<meta name="twitter:title" content="Sugar&#39;s Blog">
 <meta name="twitter:description" content="sugar1075 blog">
 
 
@@ -106,7 +106,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -132,11 +132,13 @@
 
 
 
-  <title>唐唐的个人小站</title>
+  <title>Sugar's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <div class="bg_content">
+       <canvas id="canvas"></canvas>
+  </div>
   
 
 
@@ -171,7 +173,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">唐唐的个人小站</span>
+        <span class="site-title">Sugar's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -216,6 +218,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -237,9 +249,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -264,7 +310,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/25/前端常见面试题/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/4a313e78/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -273,7 +319,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -283,7 +329,399 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/25/前端常见面试题/" itemprop="url">前端常见面试题</a></h1>
+                <a class="post-title-link" href="/posts/4a313e78/" itemprop="url">JS作用域与上下文</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T15:40:10+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/深入理解系列/" itemprop="url" rel="index">
+                    <span itemprop="name">深入理解系列</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,495
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://dn-mhke0kuv.qbox.me/db47ce1be79186fcb924.jpg" rel="gallery_cj3dtfxec0000b6fynbi6bg70"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://dn-mhke0kuv.qbox.me/db47ce1be79186fcb924.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <p>作用域是指程序源代码中定义变量的区域，可分为静态作用域与动态作用域两种。静态作用域又名词法作用域，表明函数作用域在定义时被决定。与之相对的动态作用域，则表明函数作用域在调用时被决定。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/4a313e78/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/8687d30e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sugar1075">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sugar's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/8687d30e/" itemprop="url">编写一个简单的jQuery插件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T13:58:38+08:00">
+                2017-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  467
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2075260318,2637750418&fm=23&gp=0.jpg" rel="gallery_cj3dtfxic000kb6fyobzt8g8b"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2075260318,2637750418&fm=23&gp=0.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <p>摘要：会使用 jQuery 写插件才算是真正入门 JS。 那么，该如何利用 jQuery 来自己实现一个插件呢？<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/8687d30e/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/1d0f8d42/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sugar1075">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sugar's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/1d0f8d42/" itemprop="url">前端常见面试题</a></h1>
         
 
         <div class="post-meta">
@@ -350,6 +788,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,494
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
 
           
 
@@ -361,31 +830,29 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://img0.imgtn.bdimg.com/it/u=2958155058,4077706006&fm=23&gp=0.jpg" rel="gallery_cj3dtfxhw000eb6fyiqw9s9cl"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://img0.imgtn.bdimg.com/it/u=2958155058,4077706006&fm=23&gp=0.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
         
-          
-          XHTML和HTML有什么区别?
-XHTML: 基于XML的置标语言。
-元素必须被正确嵌套
-元素必须关闭
-标签名必须小写
-文档必须有根元素
-
-
-HTML: 基本的网页设计语言。
-
-IE 和 DOM 事件流的区别
-IE 事件不加 on
-this 指向问题
-参数不同
-执行顺序不同
-
-
-          
+          <p>收集的一些前端面试题。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/25/前端常见面试题/#more" rel="contents">
+            <a class="btn" href="/posts/1d0f8d42/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -431,7 +898,7 @@ this 指向问题
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/24/arithmetic/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/6ef8bab9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -440,7 +907,7 @@ this 指向问题
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -450,7 +917,7 @@ this 指向问题
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/24/arithmetic/" itemprop="url">arithmetic</a></h1>
+                <a class="post-title-link" href="/posts/6ef8bab9/" itemprop="url">arithmetic</a></h1>
         
 
         <div class="post-meta">
@@ -517,6 +984,37 @@ this 指向问题
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  793
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
 
           
 
@@ -528,19 +1026,29 @@ this 指向问题
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=928951940,2586287766&fm=23&gp=0.jpg" rel="gallery_cj3dtfxhm000db6fywlj36r5c"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=928951940,2586287766&fm=23&gp=0.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
         
-          
-          
-题目来源：牛客网-剑指offer；Coder Byte
-
-array二维数组中的查找在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
-12345678910111213141516
-          ...
+          <p>记录一些用 JS 实现算法题目。算法方面包括栈、队列、二叉树等，此外还有对数组方法与字符串方法的灵活运用。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/24/arithmetic/#more" rel="contents">
+            <a class="btn" href="/posts/6ef8bab9/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -586,7 +1094,7 @@ array二维数组中的查找在一个二维数组中，每一行都按照从左
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/23/my-web-source/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/af66c9c0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -595,7 +1103,7 @@ array二维数组中的查找在一个二维数组中，每一行都按照从左
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -605,7 +1113,7 @@ array二维数组中的查找在一个二维数组中，每一行都按照从左
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/23/my-web-source/" itemprop="url">前端资源</a></h1>
+                <a class="post-title-link" href="/posts/af66c9c0/" itemprop="url">前端资源</a></h1>
         
 
         <div class="post-meta">
@@ -672,6 +1180,37 @@ array二维数组中的查找在一个二维数组中，每一行都按照从左
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  329
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -682,6 +1221,22 @@ array二维数组中的查找在一个二维数组中，每一行都按照从左
     <div class="post-body" itemprop="articleBody">
 
       
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1182564321,2773504236&fm=23&gp=0.jpg" rel="gallery_cj3dtfxim000nb6fyjyxikq4j"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1182564321,2773504236&fm=23&gp=0.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
       
 
       
@@ -696,7 +1251,7 @@ Youtube
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/23/my-web-source/#more" rel="contents">
+            <a class="btn" href="/posts/af66c9c0/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -742,7 +1297,7 @@ Youtube
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/23/注册登录验证二三事/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/7069f0f9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -751,7 +1306,7 @@ Youtube
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -761,7 +1316,7 @@ Youtube
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/23/注册登录验证二三事/" itemprop="url">注册登录验证二三事</a></h1>
+                <a class="post-title-link" href="/posts/7069f0f9/" itemprop="url">注册登录验证二三事</a></h1>
         
 
         <div class="post-meta">
@@ -828,6 +1383,37 @@ Youtube
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,202
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
 
           
 
@@ -842,21 +1428,10 @@ Youtube
 
       
         
-          
-          
-参考资料：
-
-登录工程：传统 Web 应用中的身份验证技术
-登录工程：现代Web应用中的身份验证技术
-登录工程：现代 Web 应用的典型身份验证需求
-
-
-鉴权与授权鉴权：向用户发起质询（Challenge），完成身份验证工作。（典型的鉴权也就是要求用户输入并比对用户名和密码的过程）
-授权：而授权则
-          ...
+          <p>登陆授权的原理理解及通过<code>node.js</code>,<code>mongodb</code>, <code>express</code>实现注册登陆功能案例实现。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/23/注册登录验证二三事/#more" rel="contents">
+            <a class="btn" href="/posts/7069f0f9/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -902,7 +1477,7 @@ Youtube
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/22/设计模式学习1/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/364ea8cc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -911,7 +1486,7 @@ Youtube
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -921,7 +1496,7 @@ Youtube
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/22/设计模式学习1/" itemprop="url">设计模式</a></h1>
+                <a class="post-title-link" href="/posts/364ea8cc/" itemprop="url">设计模式</a></h1>
         
 
         <div class="post-meta">
@@ -988,6 +1563,37 @@ Youtube
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,399
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1002,15 +1608,10 @@ Youtube
 
       
         
-          
-          UML 类图 与 时序图类之间的关系泛化关系 generalization：空心箭头实线表示。如： 汽车与 SUV
-实现关系 realize空心箭头虚线表示。如： 车与自行车
-聚合关系 aggregation空心菱形实线表示。如： 部门与员工。整体和部分非强依赖。
-组合关系 composition实
-          ...
+          <p>JS 设计模式基本概念了解。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/22/设计模式学习1/#more" rel="contents">
+            <a class="btn" href="/posts/364ea8cc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1056,7 +1657,7 @@ Youtube
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/22/mac小技巧/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/24a62ff2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -1065,7 +1666,7 @@ Youtube
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -1075,7 +1676,7 @@ Youtube
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/22/mac小技巧/" itemprop="url">mac小技巧</a></h1>
+                <a class="post-title-link" href="/posts/24a62ff2/" itemprop="url">mac小技巧</a></h1>
         
 
         <div class="post-meta">
@@ -1131,6 +1732,37 @@ Youtube
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  253
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1155,7 +1787,7 @@ Youtube
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/22/mac小技巧/#more" rel="contents">
+            <a class="btn" href="/posts/24a62ff2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1201,7 +1833,7 @@ Youtube
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/19/js-array-method1/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/5a6f5bf1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -1210,7 +1842,7 @@ Youtube
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -1220,7 +1852,7 @@ Youtube
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/19/js-array-method1/" itemprop="url">array-数组方法(1)</a></h1>
+                <a class="post-title-link" href="/posts/5a6f5bf1/" itemprop="url">array-数组方法(1)</a></h1>
         
 
         <div class="post-meta">
@@ -1287,6 +1919,37 @@ Youtube
           
 
           
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  680
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1301,18 +1964,10 @@ Youtube
 
       
         
-          
-          
-concat(),push(),shift() 与 pop() 的使用
-
-1. array.concat语法： var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]]) 
-作用：将别的一个或多个数组与原数组相连接
-
-返回值：
-          ...
+          <p>分析对比数组方法 <code>concat()</code>,<code>push()</code>,<code>shift()</code> 与 <code>pop()</code> 的使用。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/19/js-array-method1/#more" rel="contents">
+            <a class="btn" href="/posts/5a6f5bf1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1358,7 +2013,7 @@ concat(),push(),shift() 与 pop() 的使用
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/19/js-array-method2/">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/71420832/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sugar1075">
@@ -1367,7 +2022,7 @@ concat(),push(),shift() 与 pop() 的使用
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
+      <meta itemprop="name" content="Sugar's Blog">
     </span>
 
     
@@ -1377,7 +2032,7 @@ concat(),push(),shift() 与 pop() 的使用
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/19/js-array-method2/" itemprop="url">array-数组方法(2)</a></h1>
+                <a class="post-title-link" href="/posts/71420832/" itemprop="url">array-数组方法(2)</a></h1>
         
 
         <div class="post-meta">
@@ -1444,160 +2099,36 @@ concat(),push(),shift() 与 pop() 的使用
           
 
           
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-forEach()，map()；slice()，splice() 的使用
-
-1.forEach —— 遍历forEach遍历数组，对原来的数据操作，改变原数组
-函数声明：123[].forEach( function(value, index, array) &#123;     //… &#12
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/19/js-array-method2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/2017/05/19/js-array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sugar1075">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唐唐的个人小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/19/js-array/" itemprop="url">array-数组去重</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <div class="post-wordcount">
               
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T16:58:21+08:00">
-                2017-05-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
                 </span>
-
                 
+                  <span class="post-meta-item-text">字数统计</span>
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/数组/" itemprop="url" rel="index">
-                    <span itemprop="name">数组</span>
-                  </a>
+                <span title="字数统计">
+                  1,015
                 </span>
-
-                
-                
               
-            </span>
-          
 
-          
-            
-          
+              
+                <span class="post-meta-divider">|</span>
+              
 
-          
-          
-
-          
-
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
           
 
           
@@ -1613,16 +2144,10 @@ forEach()，map()；slice()，splice() 的使用
 
       
         
-          
-          
-部分方法来自于网上看到的优秀代码，加了自己的理解和补充。
-
-方法一： 用for循环删除后面重复的注解：通用方法，兼容性好，但性能一般，不推荐。循环次数过多。
-1234567891011121314function uniqueFor (arr) &#123;    for (var i = 0, 
-          ...
+          <p>深入理解 forEach()，map()；slice()，splice() 四种方法的使用。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/19/js-array/#more" rel="contents">
+            <a class="btn" href="/posts/71420832/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1662,6 +2187,10 @@ forEach()，map()；slice()，splice() 的使用
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1681,6 +2210,7 @@ forEach()，map()；slice()，splice() 的使用
       <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
+
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
@@ -1704,7 +2234,7 @@ forEach()，map()；slice()，splice() 的使用
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1715,7 +2245,7 @@ forEach()，map()；slice()，splice() 的使用
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1726,7 +2256,7 @@ forEach()，map()；slice()，splice() 的使用
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1737,6 +2267,22 @@ forEach()，map()；slice()，splice() 的使用
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Emma1075" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/iqeqshuang-di-huan-zhe" target="_blank" title="知乎">
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
 
@@ -1759,6 +2305,7 @@ forEach()，map()；slice()，splice() 的使用
   </aside>
 
 
+
         
       </div>
     </main>
@@ -1775,7 +2322,7 @@ forEach()，map()；slice()，splice() 的使用
   <span class="author" itemprop="copyrightHolder">sugar1075</span>
 </div>
 
-
+<!-- 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
@@ -1783,11 +2330,11 @@ forEach()，map()；slice()，splice() 的使用
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Muse
   </a>
 </div>
 
-
+ -->
         
 
         
@@ -1802,6 +2349,8 @@ forEach()，map()；slice()，splice() 的使用
     
 
   </div>
+
+  <a href="https://github.com/emma1075"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
   
 
@@ -1863,13 +2412,6 @@ forEach()，map()；slice()，splice() 的使用
   
   
 
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
-
   
 
   
@@ -1894,6 +2436,22 @@ forEach()，map()；slice()，splice() 的使用
 
 
   
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a5403c09db21417aba82c794cd3ff985",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
 
 
 
@@ -1901,23 +2459,329 @@ forEach()，map()；slice()，splice() 的使用
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
 
   
 
-
-
-
-
-
-  
-
-
-
-
-
   
 
   
@@ -1926,7 +2790,140 @@ forEach()，map()；slice()，splice() 的使用
 
   
 
-  
+  <script type="text/javascript">
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+        function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+        function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+        function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+        var Circle = function () {
+           function Circle(x, y) {
+                _classCallCheck(this, Circle);
+
+                this.x = x;
+                this.y = y;
+                this.r = Math.random() * 10;
+                this._mx = Math.random();
+                this._my = Math.random();
+            }
+
+           _createClass(Circle, [{
+                key: 'drawCircle',
+                value: function drawCircle(ctx) {
+                    ctx.beginPath();
+                    //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+                    ctx.arc(this.x, this.y, this.r, 0, 360);
+                    ctx.closePath();
+                    ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+                    ctx.fill();
+                }
+            }, {
+                key: 'drawLine',
+                value: function drawLine(ctx, _circle) {
+                    var dx = this.x - _circle.x;
+                    var dy = this.y - _circle.y;
+                    var d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 150) {
+                        ctx.beginPath();
+
+                        ctx.moveTo(this.x, this.y); //起始点
+                        ctx.lineTo(_circle.x, _circle.y); //终点
+                        ctx.closePath();
+                        ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                        ctx.stroke();
+                    }
+                }
+
+
+            }, {
+                key: 'move',
+                value: function move(w, h) {
+                    this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
+                    this._my = this.y < h && this.y > 0 ? this._my : -this._my;
+                    this.x += this._mx / 2;
+                    this.y += this._my / 2;
+                }
+            }]);
+
+            return Circle;
+        }();
+
+
+
+        var currentCirle = function (_Circle) {
+            _inherits(currentCirle, _Circle);
+
+            function currentCirle(x, y) {
+                _classCallCheck(this, currentCirle);
+
+                return _possibleConstructorReturn(this, (currentCirle.__proto__ || Object.getPrototypeOf(currentCirle)).call(this, x, y));
+            }
+
+            _createClass(currentCirle, [{
+                key: 'drawCircle',
+                value: function drawCircle(ctx) {
+                    ctx.beginPath();
+
+                    //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+                    this.r = 8;
+                    ctx.arc(this.x, this.y, this.r, 0, 360);
+                    ctx.closePath();
+                    //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+                    ctx.fillStyle = 'rgba(255, 77, 54, 0.6)';
+                    ctx.fill();
+                }
+            }]);
+
+            return currentCirle;
+        }(Circle);
+
+
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width = canvas.offsetWidth;
+        var h = canvas.height = canvas.offsetHeight;
+        var circles = [];
+        var current_circle = new currentCirle(0, 0);
+
+        var draw = function draw() {
+            ctx.clearRect(0, 0, w, h);
+            for (var i = 0; i < circles.length; i++) {
+                circles[i].move(w, h);
+                circles[i].drawCircle(ctx);
+                for (j = i + 1; j < circles.length; j++) {
+                    circles[i].drawLine(ctx, circles[j]);
+                }
+            }
+            if (current_circle.x) {
+                current_circle.drawCircle(ctx);
+                for (var k = 1; k < circles.length; k++) {
+                    current_circle.drawLine(ctx, circles[k]);
+                }
+            }
+            requestAnimationFrame(draw);
+        };
+
+        var init = function init(num) {
+            for (var i = 0; i < num; i++) {
+                circles.push(new Circle(Math.random() * w, Math.random() * h));
+            }
+            draw();
+        };
+        window.addEventListener('load', init(60));
+        window.onmousemove = function (e) {
+            e = e || window.event;
+            current_circle.x = e.clientX;
+            current_circle.y = e.clientY;
+        };
+        window.onmouseout = function () {
+            current_circle.x = null;
+            current_circle.y = null;
+        };
+  </script>
 </body>
 </html>

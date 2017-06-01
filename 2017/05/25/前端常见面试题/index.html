@@ -90,17 +90,19 @@
 
 
 
-<meta name="description" content="XHTML和HTML有什么区别? XHTML: 基于XML的置标语言。 元素必须被正确嵌套 元素必须关闭 标签名必须小写 文档必须有根元素   HTML: 基本的网页设计语言。  IE 和 DOM 事件流的区别 IE 事件不加 on this 指向问题 参数不同 执行顺序不同">
+<meta name="description" content="收集的一些前端面试题。">
 <meta name="keywords" content="面试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端常见面试题">
 <meta property="og:url" content="www.sugar1075.online/2017/05/25/前端常见面试题/index.html">
 <meta property="og:site_name" content="唐唐的个人小站">
-<meta property="og:description" content="XHTML和HTML有什么区别? XHTML: 基于XML的置标语言。 元素必须被正确嵌套 元素必须关闭 标签名必须小写 文档必须有根元素   HTML: 基本的网页设计语言。  IE 和 DOM 事件流的区别 IE 事件不加 on this 指向问题 参数不同 执行顺序不同">
-<meta property="og:updated_time" content="2017-05-25T10:55:29.000Z">
+<meta property="og:description" content="收集的一些前端面试题。">
+<meta property="og:image" content="http://img0.imgtn.bdimg.com/it/u=2958155058,4077706006&fm=23&gp=0.jpg">
+<meta property="og:updated_time" content="2017-05-31T03:22:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端常见面试题">
-<meta name="twitter:description" content="XHTML和HTML有什么区别? XHTML: 基于XML的置标语言。 元素必须被正确嵌套 元素必须关闭 标签名必须小写 文档必须有根元素   HTML: 基本的网页设计语言。  IE 和 DOM 事件流的区别 IE 事件不加 on this 指向问题 参数不同 执行顺序不同">
+<meta name="twitter:description" content="收集的一些前端面试题。">
+<meta name="twitter:image" content="http://img0.imgtn.bdimg.com/it/u=2958155058,4077706006&fm=23&gp=0.jpg">
 
 
 
@@ -359,9 +361,26 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://img0.imgtn.bdimg.com/it/u=2958155058,4077706006&fm=23&gp=0.jpg" rel="gallery_cj3cgb23h000evdfya3g0acla"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://img0.imgtn.bdimg.com/it/u=2958155058,4077706006&fm=23&gp=0.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <h2 id="XHTML和HTML有什么区别"><a href="#XHTML和HTML有什么区别" class="headerlink" title="XHTML和HTML有什么区别?"></a>XHTML和HTML有什么区别?</h2><ul>
+        <p>收集的一些前端面试题。<br><a id="more"></a></p>
+<h2 id="XHTML和HTML有什么区别"><a href="#XHTML和HTML有什么区别" class="headerlink" title="XHTML和HTML有什么区别?"></a>XHTML和HTML有什么区别?</h2><ul>
 <li>XHTML: 基于XML的置标语言。<ul>
 <li>元素必须被正确嵌套</li>
 <li>元素必须关闭</li>
@@ -377,6 +396,55 @@
 <li>参数不同</li>
 <li>执行顺序不同</li>
 </ol>
+<h2 id="display-none和visibility-hidden的区别"><a href="#display-none和visibility-hidden的区别" class="headerlink" title="display:none和visibility:hidden的区别"></a>display:none和visibility:hidden的区别</h2><p>答案：display:none 隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，就当他从来不存在。<br>visibility:hidden 隐藏对应的元素，但是在文档布局中仍保留原来的空间。</p>
+<h2 id="position的absolute与fixed共同点与不同点"><a href="#position的absolute与fixed共同点与不同点" class="headerlink" title="position的absolute与fixed共同点与不同点"></a>position的absolute与fixed共同点与不同点</h2><p>答案: A：共同点：<br>1.改变行内元素的呈现方式，display被置为block；<br>2.让元素脱离普通流，不占据空间；<br>3.默认会覆盖到非定位元素上</p>
+<p>B不同点：<br>absolute的”根元素“是可以设置的，而fixed的”根元素“固定为浏览器窗口。<br>当你滚动网页，fixed元素与浏览器窗口之间的距离是不变的。</p>
+<h2 id="CSS-选择符"><a href="#CSS-选择符" class="headerlink" title="CSS 选择符"></a>CSS 选择符</h2><p>CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？</p>
+<h3 id="CSS-选择符："><a href="#CSS-选择符：" class="headerlink" title="CSS 选择符："></a>CSS 选择符：</h3><p>1.id选择器(# myid)<br>2.类选择器(.myclassname)<br>3.标签选择器(div, h1, p)<br>4.相邻选择器(h1 + p)<br>5.子选择器(ul &gt; li)<br>6.后代选择器(li a)<br>7.通配符选择器( * )<br>8.属性选择器(a[rel = “external”])<br>9.伪类选择器(a: hover, li:nth-child)</p>
+<h3 id="可继承的样式："><a href="#可继承的样式：" class="headerlink" title="可继承的样式："></a>可继承的样式：</h3><p>1.font-size<br>2.font-family<br>3.color<br>4.text-indent</p>
+<h3 id="不可继承的样式："><a href="#不可继承的样式：" class="headerlink" title="不可继承的样式："></a>不可继承的样式：</h3><p>1.border<br>2.padding<br>3.margin<br>4.width<br>5.height</p>
+<h3 id="优先级算法："><a href="#优先级算法：" class="headerlink" title="优先级算法："></a>优先级算法：</h3><p>1.优先级就近原则，同权重情况下样式定义最近者为准;<br>2.载入样式以最后载入的定位为准;<br>3.!important&gt;  id &gt; class &gt; tag<br>4.important 比 内联优先级高，但内联比 id 要高</p>
+<h3 id="CSS3新增伪类举例："><a href="#CSS3新增伪类举例：" class="headerlink" title="CSS3新增伪类举例："></a>CSS3新增伪类举例：</h3><ul>
+<li>p:first-of-type 选择属于其父元素的首个 <p> 元素的每个 </p><p> 元素。</p></li>
+<li>p:last-of-type 选择属于其父元素的最后 <p> 元素的每个 </p><p> 元素。</p></li>
+<li>p:only-of-type 选择属于其父元素唯一的 <p> 元素的每个 </p><p> 元素。</p></li>
+<li>p:only-child   选择属于其父元素的唯一子元素的每个<p> 元素。</p></li>
+<li>p:nth-child(2) 选择属于其父元素的第二个子元素的每个 <p> 元素。</p></li>
+<li>:enabled:disabled 控制表单控件的禁用状态。</li>
+<li>:checked       单选框或复选框被选中。</li>
+</ul>
+<h2 id="你知道多少种Doctype文档类型？"><a href="#你知道多少种Doctype文档类型？" class="headerlink" title="你知道多少种Doctype文档类型？"></a>你知道多少种Doctype文档类型？</h2><ol>
+<li>该标签可声明三种 DTD 类型，分别表示严格版本、过渡版本以及基于框架的 HTML 文档。</li>
+<li>HTML 4.01 规定了三种文档类型：Strict、Transitional 以及 Frameset。</li>
+<li>XHTML 1.0 规定了三种 XML 文档类型：Strict、Transitional 以及 Frameset。</li>
+<li>Standards （标准）模式（也就是严格呈现模式）用于呈现遵循最新标准的网页，而 Quirks（包容）模式（也就是松散呈现模式或者兼容模式）用于呈现为传统浏览器而设计的网页。</li>
+</ol>
+<h2 id="简单说一下浏览器本地存储是怎样的"><a href="#简单说一下浏览器本地存储是怎样的" class="headerlink" title="简单说一下浏览器本地存储是怎样的"></a>简单说一下浏览器本地存储是怎样的</h2><p>在较高版本的浏览器中，js提供了 <code>sessionStorage</code> 和 <code>globalStorage</code>。在HTML5中提供了 <code>localStorage</code> 来取代<code>globalStorage</code>。<br>html5中的Web Storage包括了两种存储方式：<code>sessionStorage</code> 和 <code>localStorage</code>。<br><code>sessionStorage</code>用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此<code>sessionStorage</code>不是一种持久化的本地存储，仅仅是会话级别的存储。<br>而<code>localStorage</code>用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
+<h2 id="在JavaScript脚本中，isNaN的作用是什么？"><a href="#在JavaScript脚本中，isNaN的作用是什么？" class="headerlink" title="在JavaScript脚本中，isNaN的作用是什么？"></a>在JavaScript脚本中，isNaN的作用是什么？</h2><p>isNaN的作用是判断值是否为数字</p>
+<h2 id="编写JavaScript脚本生成1-6之间的整数？"><a href="#编写JavaScript脚本生成1-6之间的整数？" class="headerlink" title="编写JavaScript脚本生成1-6之间的整数？"></a>编写JavaScript脚本生成1-6之间的整数？</h2><pre><code class="js"><span class="keyword">var</span> NowFrame;
+NowFrame=<span class="built_in">Math</span>.random( )*<span class="number">6</span>+<span class="number">1</span> <span class="comment">// 随机生成一个1-6之间的小数</span>
+NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">// 把1-6之间的小数转化为整数</span>
+</code></pre>
+<h2 id="Ajax的优缺点都有什么？"><a href="#Ajax的优缺点都有什么？" class="headerlink" title="Ajax的优缺点都有什么？"></a>Ajax的优缺点都有什么？</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>页面无刷新，用户体验非常好。</li>
+<li>使用异步方式与服务器通信，具有更加迅速的响应能力。</li>
+<li>可以把一些服务器负担的工作转到客户端，利用客户端闲置的能力来处理，减轻服务器负担，节约空间和宽带租用成本。并且减轻服务器的负担，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求和响应对服务器造成的负担。</li>
+<li>基于标准化并被广泛支持的技术，不需要下载插件或者小程序。</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点:"></a>缺点:</h3><ol>
+<li>Ajax不支持浏览器back按钮。</li>
+<li>安全问题， Ajax暴露了与服务器交互的细节。</li>
+<li>对搜索引擎的支持比较弱。</li>
+<li>破坏了程序的异常机制。</li>
+<li>不容易调试。</li>
+</ol>
+<h2 id="简述一下Ajax的工作原理"><a href="#简述一下Ajax的工作原理" class="headerlink" title="简述一下Ajax的工作原理"></a>简述一下Ajax的工作原理</h2><p>Ajax的核心是JavaScript对象<code>XmlHttpRequest</code>。该对象在Internet Explorer 5中首次引入，它是一种支持异步请求的技术。简而言之，<code>XmlHttpRequest</code>使您可以使用JavaScript向服务器提出请求并处理响应，而不阻塞用户。</p>
+<h2 id="CSS-DIV开发Web页面的优势有哪些？"><a href="#CSS-DIV开发Web页面的优势有哪些？" class="headerlink" title="CSS+DIV开发Web页面的优势有哪些？"></a>CSS+DIV开发Web页面的优势有哪些？</h2><ol>
+<li>CSS+DIV，这个网页设计模式中，DIV承担了网页的内容，CSS承担了网页的样式。这样就使网页的内容和样式的分离开来。有利于页面的维护升级。</li>
+<li>有助于提高搜索引擎亲和力（快速找到需要的数据，而不是像在TABLE中一层层的查找）</li>
+<li>有助于页面的重构(换皮肤如blog，直接套用另外一套样式就可以实现，而不用改动网页脚本。)</li>
+</ol>
+<h2 id="相等"><a href="#相等" class="headerlink" title="==相等"></a><code>==</code>相等</h2><p>== | 0 | “” | [] | false | undefined | null|<br>|—|—| —|—|—| —| —|<br>| <strong>0</strong> | - | true  |      true  |     true      |     |<br>| <strong>“”</strong>| true | - |  true |  true  |           |     |<br>| <strong>[]</strong> | true | true |   - |   true     |           |     |<br>| <strong>false</strong> | true | true |  true |  - |          |     |<br>| <strong>undefined</strong> |  |  |    |     |      -    |  true   |<br>| <strong>null</strong> |  |  |    |        |     true      |  -   |</p>
 
       
     </div>
@@ -428,6 +496,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/27/编写一个简单的jQuery插件/" rel="prev" title="编写一个简单的jQuery插件">
+                编写一个简单的jQuery插件 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -510,7 +582,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -521,7 +593,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -556,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XHTML和HTML有什么区别"><span class="nav-number">1.</span> <span class="nav-text">XHTML和HTML有什么区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE-和-DOM-事件流的区别"><span class="nav-number">2.</span> <span class="nav-text">IE 和 DOM 事件流的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XHTML和HTML有什么区别"><span class="nav-number">1.</span> <span class="nav-text">XHTML和HTML有什么区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE-和-DOM-事件流的区别"><span class="nav-number">2.</span> <span class="nav-text">IE 和 DOM 事件流的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-none和visibility-hidden的区别"><span class="nav-number">3.</span> <span class="nav-text">display:none和visibility:hidden的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的absolute与fixed共同点与不同点"><span class="nav-number">4.</span> <span class="nav-text">position的absolute与fixed共同点与不同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-选择符"><span class="nav-number">5.</span> <span class="nav-text">CSS 选择符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-选择符："><span class="nav-number">5.1.</span> <span class="nav-text">CSS 选择符：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可继承的样式："><span class="nav-number">5.2.</span> <span class="nav-text">可继承的样式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可继承的样式："><span class="nav-number">5.3.</span> <span class="nav-text">不可继承的样式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级算法："><span class="nav-number">5.4.</span> <span class="nav-text">优先级算法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3新增伪类举例："><span class="nav-number">5.5.</span> <span class="nav-text">CSS3新增伪类举例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你知道多少种Doctype文档类型？"><span class="nav-number">6.</span> <span class="nav-text">你知道多少种Doctype文档类型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单说一下浏览器本地存储是怎样的"><span class="nav-number">7.</span> <span class="nav-text">简单说一下浏览器本地存储是怎样的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在JavaScript脚本中，isNaN的作用是什么？"><span class="nav-number">8.</span> <span class="nav-text">在JavaScript脚本中，isNaN的作用是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写JavaScript脚本生成1-6之间的整数？"><span class="nav-number">9.</span> <span class="nav-text">编写JavaScript脚本生成1-6之间的整数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax的优缺点都有什么？"><span class="nav-number">10.</span> <span class="nav-text">Ajax的优缺点都有什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">10.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">10.2.</span> <span class="nav-text">缺点:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述一下Ajax的工作原理"><span class="nav-number">11.</span> <span class="nav-text">简述一下Ajax的工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-DIV开发Web页面的优势有哪些？"><span class="nav-number">12.</span> <span class="nav-text">CSS+DIV开发Web页面的优势有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相等"><span class="nav-number">13.</span> <span class="nav-text">==相等</span></a></li></ol></div>
             
 
           </div>
