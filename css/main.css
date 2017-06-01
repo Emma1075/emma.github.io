@@ -1,3 +1,19 @@
+/*设置背景*/
+.bg_content {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+/*将头部背景变为透明*/
+.header {
+  background: transparent;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -433,7 +449,7 @@ body {
 }
 .header-inner {
   margin: 0 auto;
-  padding: 100px 0 70px;
+  padding: 100px 0 50px;
   width: 700px;
 }
 @media (min-width: 1600px) {
@@ -1205,6 +1221,7 @@ pre .javascript .function {
 .posts-collapse {
   position: relative;
   z-index: 1010;
+  margin-top: -50px;
   margin-left: 55px;
 }
 .posts-collapse::after {
@@ -1226,6 +1243,7 @@ pre .javascript .function {
 .posts-collapse .collection-title {
   position: relative;
   margin: 60px 0;
+  padding: 0 20px;
 }
 .posts-collapse .collection-title h2 {
   margin-left: 20px;
@@ -1357,7 +1375,7 @@ pre .javascript .function {
   font-size: 16px;
 }
 .posts-expand .post-meta {
-  margin: 3px 0 60px 0;
+  margin: 3px 0 15px 0;
   color: #999;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
@@ -1430,7 +1448,7 @@ pre .javascript .function {
   align-self: center;
 }
 .post-button {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .post-button .btn {
   color: #fff;
@@ -1519,6 +1537,7 @@ pre .javascript .function {
   table-layout: fixed;
   width: 100%;
   border-collapse: separate;
+  margin-bottom: 15px;
 }
 .post-gallery-row {
   display: table-row;
@@ -1688,14 +1707,14 @@ pre .javascript .function {
   font-size: 13px;
 }
 .links-of-author a:before {
-  display: inline-block;
+  display: block;
   vertical-align: middle;
   margin-right: 3px;
   content: " ";
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #16f416;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2274,6 +2293,7 @@ pre .javascript .function {
 }
 .category-all-page .category-all {
   margin-top: 20px;
+  margin-left: 17%;
 }
 .category-all-page .category-list {
   margin: 0;
