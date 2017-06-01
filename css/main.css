@@ -1707,14 +1707,14 @@ pre .javascript .function {
   font-size: 13px;
 }
 .links-of-author a:before {
-  display: block;
+  display: none;
   vertical-align: middle;
   margin-right: 3px;
   content: " ";
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #16f416;
+  background: #994dff;
 }
 .links-of-blogroll {
   font-size: 13px;
