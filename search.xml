@@ -7,7 +7,7 @@
       <url>/posts/df6c53af/</url>
       <content type="html"><![CDATA[<p>来自于J avaScript30 的项目练习。</p>
 <a id="more"></a>
-<h1 id="JavaScript-Drum-Kit"><a href="#JavaScript-Drum-Kit" class="headerlink" title="JavaScript Drum Kit"></a>JavaScript Drum Kit</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="获取所有的key。"><a href="#获取所有的key。" class="headerlink" title="获取所有的key。"></a>获取所有的<code>key</code>。</h3><p>注意：<code>querySelectorAll()</code>获取到的是<code>NodeList</code> 而非 <code>Array</code>。需要进行转化,转化方法如下：</p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="获取所有的key。"><a href="#获取所有的key。" class="headerlink" title="获取所有的key。"></a>获取所有的<code>key</code>。</h3><p>注意：<code>querySelectorAll()</code>获取到的是<code>NodeList</code> 而非 <code>Array</code>。需要进行转化,转化方法如下：</p>
 <ul>
 <li>es6: 通过 <code>Array.from()</code></li>
 <li>es5: 通过<code>Array.prototype.slice.call(this, 0)</code> 或 <code>[].slice.call(this, 0)</code> </li>
