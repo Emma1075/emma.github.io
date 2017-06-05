@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="来自于J avaScript30 的项目练习。">
 <meta property="og:image" content="https://s3.amazonaws.com/js30-cdn/small0.jpg">
-<meta property="og:updated_time" content="2017-06-02T09:57:42.000Z">
+<meta property="og:updated_time" content="2017-06-05T06:22:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript30-模拟打鼓效果">
 <meta name="twitter:description" content="来自于J avaScript30 的项目练习。">
@@ -450,7 +450,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://s3.amazonaws.com/js30-cdn/small0.jpg" rel="gallery_cj3fnn4wx0005qafyd9ms2qlj"
+                 href="https://s3.amazonaws.com/js30-cdn/small0.jpg" rel="gallery_cj3jr1f7c000qnpx4lyxdjeq0"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://s3.amazonaws.com/js30-cdn/small0.jpg" itemprop="contentUrl"/>
               </a>
@@ -465,6 +465,7 @@
       
         <p>来自于J avaScript30 的项目练习。</p>
 <a id="more"></a>
+<p><a href="https://github.com/Emma1075/javascript30-challenge/tree/master/01_drum-kit" target="_blank" rel="external">代码地址</a>；  <a href="http://www.sugar1075.online/javascript30-challenge/01_drum-kit/">demo 效果</a></p>
 <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="获取所有的key。"><a href="#获取所有的key。" class="headerlink" title="获取所有的key。"></a>获取所有的<code>key</code>。</h3><p>注意：<code>querySelectorAll()</code>获取到的是<code>NodeList</code> 而非 <code>Array</code>。需要进行转化,转化方法如下：</p>
 <ul>
 <li>es6: 通过 <code>Array.from()</code></li>
@@ -495,7 +496,6 @@
 <li>监听按键的<code>transitionend</code> 事件， 按键元素动画结束后触发移除动画的 <code>removeTransition()</code> 函数。</li>
 </ol>
 <h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// 用 box-shadow 或者 transform 都可以。</span></div><div class="line">  <span class="keyword">if</span> (e.propertyName !== <span class="string">'box-shadow'</span>) <span class="keyword">return</span>;</div><div class="line">  e.target.classList.remove(<span class="string">'playing'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">playAudio</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> event = e || <span class="built_in">window</span>.event;</div><div class="line">  <span class="keyword">var</span> kCode = e.keyCode;</div><div class="line">  <span class="keyword">var</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">'audio[data-key="'</span>+ kCode+ <span class="string">'"]'</span>);</div><div class="line">  <span class="keyword">var</span> key = <span class="built_in">document</span>.querySelector(<span class="string">'div[data-key="'</span>+ kCode + <span class="string">'"]'</span>);</div><div class="line">  <span class="comment">// var audio = document.querySelector(`audio[data-key="$&#123;kCode&#125;"]`);</span></div><div class="line">  <span class="comment">// var key = document.querySelector(`div[data-key="$&#123;kCode&#125;"]`);</span></div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!audio || !key) <span class="keyword">return</span>;</div><div class="line">  audio.currentTime = <span class="number">0</span>;</div><div class="line">  audio.play();</div><div class="line"></div><div class="line">  key.className += <span class="string">' playing'</span>;</div><div class="line">  <span class="comment">// key.classList.add('playing');</span></div><div class="line">  key.addEventListener(<span class="string">'transitionend'</span>, removeTransition);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, playAudio);</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/Emma1075/javascript30-challenge/tree/master/01_drum-kit" target="_blank" rel="external">代码地址</a>；  <a href="http://www.sugar1075.online/javascript30-challenge/01_drum-kit/">demo 效果</a></p>
 
       
     </div>
@@ -538,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/55996f73/" rel="next" title="JS的异步">
-                <i class="fa fa-chevron-left"></i> JS的异步
+              <a href="/posts/4a313e78/" rel="next" title="JS作用域与上下文">
+                <i class="fa fa-chevron-left"></i> JS作用域与上下文
               </a>
             
           </div>
@@ -547,6 +547,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/7e36f86a/" rel="prev" title="javascript30-模拟时钟">
+                javascript30-模拟时钟 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>

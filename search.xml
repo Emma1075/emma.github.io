@@ -3,10 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[javascript30-模拟时钟]]></title>
+      <url>/posts/7e36f86a/</url>
+      <content type="html"><![CDATA[<p>利用 css3 与 原生 js 实现时钟效果。</p>
+<a id="more"></a>
+<p><a href="http://www.sugar1075.online/javascript30-challenge/02_clock/index.html">项目效果</a>； <a href="https://github.com/Emma1075/javascript30-challenge/tree/master/02_clock" target="_blank" rel="external">代码地址</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>获取当前时间的时、分、秒，以当前时间初始化时钟： <code>initTime()</code>；</li>
+<li>利用 <code>setInterval()</code> 方法每隔一秒执行一次 <code>updateTime()</code> 函数；</li>
+<li><code>updateTime()</code> 函数中：利用 css3 的 <code>transform: rotate()</code> 属性，对指针进行旋转。<ul>
+<li>利用伪元素<code>:after</code>设置中心点</li>
+<li>利用 css3 属性 <code>transform-origin</code> 设置指针的旋转中心</li>
+</ul>
+</li>
+</ol>
+<h2 id="核心算法"><a href="#核心算法" class="headerlink" title="核心算法"></a>核心算法</h2><p>核心算法在于每秒钟各指针改变的角度。令 <code>degree</code> 等于时钟上最小两格之间的度数.<code>degree = (1 / 60) * 360</code></p>
+<p>秒针： 1 秒改变的度数为 <code>1 * degree</code></p>
+<p>分针： 60 秒改变 1 个 <code>degree</code> =&gt; 1 秒改变 1/60 个 <code>dgree</code>。即：<code>(1 / 60) * degree</code></p>
+<p>时针： 60 分改变 5 个 <code>degree</code> =&gt; 1 分 改变 1/60 个 <code>5 * degree</code> =&gt; 1 秒改变 <code>（1 / 60 / 60) * (5 * degree)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateTime</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    sDeg += <span class="number">1</span> * degree; </div><div class="line">    mDeg += ( <span class="number">1</span> / <span class="number">60</span> ) * degree;</div><div class="line">    hDeg += ( <span class="number">1</span> / <span class="number">60</span> / <span class="number">60</span>) * (<span class="number">5</span> * degree);</div><div class="line"></div><div class="line">    handHours.style.transform = <span class="string">`rotate(<span class="subst">$&#123; hDeg &#125;</span>deg)`</span>;</div><div class="line">    handMinutes.style.transform  = <span class="string">`rotate(<span class="subst">$&#123; mDeg &#125;</span>deg)`</span>;</div><div class="line">    handSeconds.style.transform = <span class="string">`rotate(<span class="subst">$&#123; sDeg &#125;</span>deg)`</span>;;</div><div class="line">&#125;</div><div class="line">setInterval(updateTime,<span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/*法一*/</div><div class="line">div &#123;</div><div class="line">	position: absolute;</div><div class="line">	top: 50%;</div><div class="line">	left: 50%;</div><div class="line">	transform: translate(-50%, -50%);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*法二*/</div><div class="line">div &#123;</div><div class="line">	position: absolute;</div><div class="line">	left: 0;;</div><div class="line">	right: 0;</div><div class="line">	top: 0;</div><div class="line">	bottom: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="css3-属性"><a href="#css3-属性" class="headerlink" title="css3 属性"></a>css3 属性</h3><p><code>transform-origin</code>设置旋转中心. <a href="http://www.w3school.com.cn/cssref/pr_transform-origin.asp" target="_blank" rel="external">transform-origin</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hours</span> &#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">left</span>: <span class="number">48.75%</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">30%</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">2.5%</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">20%</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#000</span>;</div><div class="line">	<span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">100%</span>; </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.minutes</span> &#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">left</span>: <span class="number">49%</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">20%</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">2%</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">30%</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#000</span>;</div><div class="line">	<span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.seconds</span> &#123;</div><div class="line">	<span class="attribute">position</span>: absolute;</div><div class="line">	<span class="attribute">left</span>: <span class="number">49.25%</span>;</div><div class="line">	<span class="attribute">top</span>: <span class="number">15%</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">1.5%</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">43%</span>;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#000</span>;</div><div class="line">	<span class="attribute">z-index</span>: <span class="number">5</span>;</div><div class="line">	<span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">80%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> javascript </category>
+            
+            <category> 项目练习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js-project </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[javascript30-模拟打鼓效果]]></title>
       <url>/posts/df6c53af/</url>
       <content type="html"><![CDATA[<p>来自于J avaScript30 的项目练习。</p>
 <a id="more"></a>
+<p><a href="https://github.com/Emma1075/javascript30-challenge/tree/master/01_drum-kit" target="_blank" rel="external">代码地址</a>；  <a href="http://www.sugar1075.online/javascript30-challenge/01_drum-kit/">demo 效果</a></p>
 <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="获取所有的key。"><a href="#获取所有的key。" class="headerlink" title="获取所有的key。"></a>获取所有的<code>key</code>。</h3><p>注意：<code>querySelectorAll()</code>获取到的是<code>NodeList</code> 而非 <code>Array</code>。需要进行转化,转化方法如下：</p>
 <ul>
 <li>es6: 通过 <code>Array.from()</code></li>
@@ -37,7 +79,6 @@
 <li>监听按键的<code>transitionend</code> 事件， 按键元素动画结束后触发移除动画的 <code>removeTransition()</code> 函数。</li>
 </ol>
 <h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// 用 box-shadow 或者 transform 都可以。</span></div><div class="line">  <span class="keyword">if</span> (e.propertyName !== <span class="string">'box-shadow'</span>) <span class="keyword">return</span>;</div><div class="line">  e.target.classList.remove(<span class="string">'playing'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">playAudio</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> event = e || <span class="built_in">window</span>.event;</div><div class="line">  <span class="keyword">var</span> kCode = e.keyCode;</div><div class="line">  <span class="keyword">var</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">'audio[data-key="'</span>+ kCode+ <span class="string">'"]'</span>);</div><div class="line">  <span class="keyword">var</span> key = <span class="built_in">document</span>.querySelector(<span class="string">'div[data-key="'</span>+ kCode + <span class="string">'"]'</span>);</div><div class="line">  <span class="comment">// var audio = document.querySelector(`audio[data-key="$&#123;kCode&#125;"]`);</span></div><div class="line">  <span class="comment">// var key = document.querySelector(`div[data-key="$&#123;kCode&#125;"]`);</span></div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!audio || !key) <span class="keyword">return</span>;</div><div class="line">  audio.currentTime = <span class="number">0</span>;</div><div class="line">  audio.play();</div><div class="line"></div><div class="line">  key.className += <span class="string">' playing'</span>;</div><div class="line">  <span class="comment">// key.classList.add('playing');</span></div><div class="line">  key.addEventListener(<span class="string">'transitionend'</span>, removeTransition);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, playAudio);</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/Emma1075/javascript30-challenge/tree/master/01_drum-kit" target="_blank" rel="external">代码地址</a>；  <a href="http://www.sugar1075.online/javascript30-challenge/01_drum-kit/">demo 效果</a></p>
 ]]></content>
       
         <categories>
@@ -52,29 +93,6 @@
         <tags>
             
             <tag> js-project </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[JS的异步]]></title>
-      <url>/posts/55996f73/</url>
-      <content type="html"><![CDATA[<p>JavaScript 是一门单线程异步非阻塞的语言。 异步是单线程的 JavaScript 处理触发任务（如 I/O、网络请求、浏览器事件、定时器）的基本机制。异步本身带来的局限性有各种思路可以解决。</p>
-<a id="more"></a>
-<h2 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h2><p>利用 <code>setInterval()</code> 与 <code>setTimeout()</code> 方法实现异步</p>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h2 id="获取数据-API"><a href="#获取数据-API" class="headerlink" title="获取数据 API"></a>获取数据 API</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="其他异步模型"><a href="#其他异步模型" class="headerlink" title="其他异步模型"></a>其他异步模型</h2>]]></content>
-      
-        <categories>
-            
-            <category> javascript </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 异步 </tag>
             
         </tags>
         
@@ -571,8 +589,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
 </li>
 </ul>
 <h3 id="方法三：使用软件-duti"><a href="#方法三：使用软件-duti" class="headerlink" title="方法三：使用软件 duti"></a>方法三：使用软件 duti</h3><p>参考：<a href="http://www.tuicool.com/articles/VZJRNv2" target="_blank" rel="external">设置 Mac 下文件的默认打开程序 — duti 详解</a></p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>命令行常用命令</p>
-<table>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="命令行常用命令"><a href="#命令行常用命令" class="headerlink" title="命令行常用命令"></a>命令行常用命令</h3><table>
 <thead>
 <tr>
 <th>命令</th>
