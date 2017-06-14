@@ -97,7 +97,7 @@
 <meta property="og:url" content="www.sugar1075.online/posts/5e52ca19/index.html">
 <meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="MEAN 堆栈：MongoDB、Express、AngularJS 和 Node.js。MEAN 堆栈代表着一种完全现代的 Web 开发方法：一种语言运行在应用程序的所有层次上，从客户端到服务器，再到持久层。">
-<meta property="og:updated_time" content="2017-06-12T10:40:14.000Z">
+<meta property="og:updated_time" content="2017-06-13T07:53:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于MEAN的全栈开发实例demo">
 <meta name="twitter:description" content="MEAN 堆栈：MongoDB、Express、AngularJS 和 Node.js。MEAN 堆栈代表着一种完全现代的 Web 开发方法：一种语言运行在应用程序的所有层次上，从客户端到服务器，再到持久层。">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  856
+                  875
                 </span>
               
 
@@ -465,7 +465,10 @@
 <p><strong>开发环境准备</strong>：</p>
 <p>全局安装 <a href="http://mongodb.org" target="_blank" rel="external">Mongo</a>，<a href="https://nodejs.org" target="_blank" rel="external">Node</a>, Express, Express Generator, Nodemon, Angular.js;</p>
 <p>项目内安装 Monk (用来读写MongoDB的Node模块)</p>
-<h2 id="一、从数据库中查询视频"><a href="#一、从数据库中查询视频" class="headerlink" title="一、从数据库中查询视频"></a>一、从数据库中查询视频</h2><h3 id="第1步-构建数据库"><a href="#第1步-构建数据库" class="headerlink" title="第1步 构建数据库"></a>第1步 构建数据库</h3><p>利用 <a href="http://robomongo.org" target="_blank" rel="external">RoboMongo</a>, 新建数据库<code>vidzy</code>，在该数据库下建立集合<code>videos</code>， 向其中插入以下三条数据：</p>
+<h2 id="一、从数据库中查询视频"><a href="#一、从数据库中查询视频" class="headerlink" title="一、从数据库中查询视频"></a>一、从数据库中查询视频</h2><blockquote>
+<p>通过 mongodb 来建立数据库，可参考 <a href="https://cnodejs.org/topic/504b4924e2b84515770103dd" target="_blank" rel="external">Mongoose学习参考文档</a></p>
+</blockquote>
+<h3 id="第1步-构建数据库"><a href="#第1步-构建数据库" class="headerlink" title="第1步 构建数据库"></a>第1步 构建数据库</h3><p>利用 <a href="http://robomongo.org" target="_blank" rel="external">RoboMongo</a>, 新建数据库<code>vidzy</code>，在该数据库下建立集合<code>videos</code>， 向其中插入以下三条数据：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attr">"title"</span> : <span class="string">"Terminator Genisys"</span>,</div><div class="line"> <span class="attr">"genre"</span> : <span class="string">"SciFi"</span>,</div><div class="line"> <span class="attr">"description"</span> : <span class="string">"When John Connor, leader of the human resistance, sends Sgt. Kyle Reese back to 1984 to protect Sarah Connor and safeguard the future, an unexpected turn of events creates a fractured timeline."</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attr">"title"</span> : <span class="string">"The Lord of the Rings"</span>,</div><div class="line"> <span class="attr">"genre"</span> : <span class="string">"Fantasy"</span>,</div><div class="line"> <span class="attr">"description"</span> : <span class="string">"A meek hobbit of the Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron."</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attr">"title"</span> : <span class="string">"Apollo 13"</span>,</div><div class="line"> <span class="attr">"genre"</span> : <span class="string">"Drama"</span>,</div><div class="line"> <span class="attr">"description"</span> : <span class="string">"NASA must devise a strategy to return Apollo 13 to Earth safely after the spacecraft undergoes massive internal damage putting the lives of the three astronauts on board in jeopardy."</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
