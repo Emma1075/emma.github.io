@@ -93,7 +93,7 @@
 <meta name="description" content="stay hungry, stay foolish.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sugar&#39;s Blog">
-<meta property="og:url" content="www.sugar1075.online/tags/javascript/index.html">
+<meta property="og:url" content="www.sugar1075.online/tags/javaScript/index.html">
 <meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="stay hungry, stay foolish.">
 <meta name="twitter:card" content="summary">
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="www.sugar1075.online/tags/javascript/"/>
+  <link rel="canonical" href="www.sugar1075.online/tags/javaScript/"/>
 
 
 
 
 
-  <title>标签: javascript | Sugar's Blog</title>
+  <title>标签: javaScript | Sugar's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -297,7 +297,7 @@
 
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
-      <h1>javascript<small>标签</small>
+      <h1>javaScript<small>标签</small>
       </h1>
     </div>
 
@@ -309,37 +309,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/posts/4a313e78/" itemprop="url">
+            <a class="post-title-link" href="/posts/471ca190/" itemprop="url">
               
-                <span itemprop="name">JS作用域与上下文</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-31T15:40:10+08:00"
-              content="2017-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/5a6f5bf1/" itemprop="url">
-              
-                <span itemprop="name">array-数组方法(1)</span>
+                <span itemprop="name">跨域小结</span>
               
             </a>
         
@@ -347,37 +319,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-19T17:03:23+08:00"
-              content="2017-05-19" >
-          05-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/71420832/" itemprop="url">
-              
-                <span itemprop="name">array-数组方法(2)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-19T17:03:23+08:00"
-              content="2017-05-19" >
-          05-19
+              datetime="2017-06-20T14:07:37+08:00"
+              content="2017-06-20" >
+          06-20
         </time>
       </div>
 
@@ -432,7 +376,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -443,7 +387,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -454,7 +398,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1088,6 +1032,49 @@
 
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
+    var w = canvas.width = canvas.offsetWidth;
+    var h = canvas.height = canvas.offsetHeight;
+    var circles = [];
+    var current_circle = new currentCirle(0, 0);
+
+    var draw = function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].move(w, h);
+            circles[i].drawCircle(ctx);
+            for (j = i + 1; j < circles.length; j++) {
+                circles[i].drawLine(ctx, circles[j]);
+            }
+        }
+        if (current_circle.x) {
+            current_circle.drawCircle(ctx);
+            for (var k = 1; k < circles.length; k++) {
+                current_circle.drawLine(ctx, circles[k]);
+            }
+        }
+        requestAnimationFrame(draw);
+    };
+
+    var init = function init(num) {
+        for (var i = 0; i < num; i++) {
+            circles.push(new Circle(Math.random() * w, Math.random() * h));
+        }
+        draw();
+    };
+    window.addEventListener('load', init(60));
+    window.onmousemove = function (e) {
+        e = e || window.event;
+        current_circle.x = e.clientX;
+        current_circle.y = e.clientY;
+    };
+    window.onmouseout = function () {
+        current_circle.x = null;
+        current_circle.y = null;
+    };
+  </script>
+</body>
+</html>
+t('2d');
     var w = canvas.width = canvas.offsetWidth;
     var h = canvas.height = canvas.offsetHeight;
     var circles = [];
