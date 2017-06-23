@@ -97,7 +97,7 @@
 <meta property="og:url" content="www.sugar1075.online/posts/fbff8979/index.html">
 <meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="最近要做一个项目对 ie8 浏览器的兼容性处理， 特此记录。">
-<meta property="og:updated_time" content="2017-06-15T03:45:20.000Z">
+<meta property="og:updated_time" content="2017-06-23T09:23:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ie8的兼容性处理">
 <meta name="twitter:description" content="最近要做一个项目对 ie8 浏览器的兼容性处理， 特此记录。">
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  884
+                  1,073
                 </span>
               
 
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -461,6 +461,13 @@
 <h3 id="判断浏览器类型"><a href="#判断浏览器类型" class="headerlink" title="判断浏览器类型"></a>判断浏览器类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> url = <span class="string">'xxx.xxxxxxxx.xxx'</span>;</div><div class="line"><span class="keyword">if</span>(navigator.userAgent.inddexOf(<span class="string">'MSIE'</span>) &gt;= <span class="number">0</span> ) &#123;</div><div class="line">	<span class="keyword">var</span> brower = navigator.appName,</div><div class="line">		b_version = navigator.appVersion,</div><div class="line">		version = b_version.split(<span class="string">';'</span>),</div><div class="line">		trim_version = version[<span class="number">1</span>].replace(<span class="regexp">/[ ]/g</span>, <span class="string">''</span>)</div><div class="line">	<span class="keyword">if</span> (browser == <span class="string">'Microsoft Internat Explorer'</span> &amp;&amp; trim_version == <span class="string">'MSIE8.0'</span>) &#123;</div><div class="line">		<span class="built_in">window</span>.location.href = url;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="comment">// write code;</span></div><div class="line">	&#125;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="comment">// write code;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>通过 iframe ，实现点击并在新窗口下载内容。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> eleIframe = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</div><div class="line">eleIframe.src = url;</div><div class="line">eleIframe.style.display = <span class="string">"none"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(eleIframe);</div></pre></td></tr></table></figure>
+<h3 id="日期格式的转换"><a href="#日期格式的转换" class="headerlink" title="日期格式的转换"></a>日期格式的转换</h3><p>提交表单时，需要将字符串格式的数据如<code>”2017-06-23“</code>转为日期格式。<br>原来的处理如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dateVal = formData[i].value;</div><div class="line"><span class="built_in">console</span>.log(dateVal + <span class="string">' || '</span> + <span class="keyword">typeof</span>(dateVal));	<span class="comment">// '2016-12-21' || string</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> deadline = <span class="keyword">new</span> <span class="built_in">Date</span>(dateVal);		</div><div class="line"><span class="built_in">console</span>.log(deadline + <span class="string">' || '</span> + <span class="keyword">typeof</span>(dateVal));	<span class="comment">// Wed Dec 21 2016 08:00:00 GMT+0800 (CST)  || object</span></div></pre></td></tr></table></figure>
+<p>此做法在 chrome 及 ie9 浏览器下均无问题，但在 ie8 浏览器中，会出现如下情况：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> deadline = <span class="keyword">new</span> <span class="built_in">Date</span>(dateVal);		</div><div class="line"><span class="built_in">console</span>.log(deadline + <span class="string">' || '</span> + <span class="keyword">typeof</span>(dateVal));	<span class="comment">// NaN || object</span></div></pre></td></tr></table></figure>
+<p>故为了兼容 ie8 ，对日期需进一步处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dateVal = formData[i].value;</div><div class="line"></div><div class="line"><span class="comment">// 处理日期格式</span></div><div class="line"><span class="built_in">console</span>.log(dateVal);		<span class="comment">// '2016-12-21'</span></div><div class="line">dateVal = dateVal.replace(<span class="regexp">/-/g</span>, <span class="string">'/'</span>);</div><div class="line"><span class="built_in">console</span>.log(dateVal);		<span class="comment">// '2016/12/21'</span></div><div class="line"></div><div class="line"><span class="comment">// 后面照常不做更改</span></div><div class="line"><span class="keyword">var</span> deadline = <span class="keyword">new</span> <span class="built_in">Date</span>(dateVal);		</div><div class="line"><span class="built_in">console</span>.log(deadline + <span class="string">' || '</span> + <span class="keyword">typeof</span>(dateVal));	<span class="comment">// Wed Dec 21 2016 08:00:00 GMT+0800 (CST)  || object</span></div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -589,7 +596,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -662,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html"><span class="nav-number">1.</span> <span class="nav-text">html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css"><span class="nav-number">2.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS"><span class="nav-number">3.</span> <span class="nav-text">JS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改标题-title-内容"><span class="nav-number">3.1.</span> <span class="nav-text">修改标题 title 内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-方法"><span class="nav-number">3.2.</span> <span class="nav-text">indexOf() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-方法"><span class="nav-number">3.3.</span> <span class="nav-text">filter() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-方法"><span class="nav-number">3.4.</span> <span class="nav-text">forEach()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object-assign-方法"><span class="nav-number">3.5.</span> <span class="nav-text">object.assign() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ie-事件"><span class="nav-number">3.6.</span> <span class="nav-text">ie 事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset"><span class="nav-number">3.7.</span> <span class="nav-text">dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断浏览器类型"><span class="nav-number">3.8.</span> <span class="nav-text">判断浏览器类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">3.9.</span> <span class="nav-text">下载</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html"><span class="nav-number">1.</span> <span class="nav-text">html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css"><span class="nav-number">2.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS"><span class="nav-number">3.</span> <span class="nav-text">JS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改标题-title-内容"><span class="nav-number">3.1.</span> <span class="nav-text">修改标题 title 内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-方法"><span class="nav-number">3.2.</span> <span class="nav-text">indexOf() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-方法"><span class="nav-number">3.3.</span> <span class="nav-text">filter() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-方法"><span class="nav-number">3.4.</span> <span class="nav-text">forEach()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object-assign-方法"><span class="nav-number">3.5.</span> <span class="nav-text">object.assign() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ie-事件"><span class="nav-number">3.6.</span> <span class="nav-text">ie 事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset"><span class="nav-number">3.7.</span> <span class="nav-text">dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断浏览器类型"><span class="nav-number">3.8.</span> <span class="nav-text">判断浏览器类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">3.9.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期格式的转换"><span class="nav-number">3.10.</span> <span class="nav-text">日期格式的转换</span></a></li></ol></li></ol></div>
             
 
           </div>
