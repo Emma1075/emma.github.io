@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[图片懒加载]]></title>
+      <url>/posts/f0e261b6/</url>
+      <content type="html"><![CDATA[<p>懒加载：Web 图片的懒加载就是通过读取img元素，然后获得img元素的<code>data-src</code>（也可以约定为其他属性名）属性的值，并赋予img的src，从而实现动态加载图片的机制。</p>
+<a id="more"></a>]]></content>
+      
+        <categories>
+            
+            <category> JavaScript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[array-数组方法(3)]]></title>
       <url>/posts/68593973/</url>
       <content type="html"><![CDATA[<p>网站给出了一个inventors数组，包含了名、姓、出生日期和死亡日期；以及people数组，包含一组人名，名和姓中间以逗号分隔。在此基础上完成以下练习。</p>
@@ -19,7 +40,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 数组 </category>
             
@@ -28,7 +49,7 @@
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> JavaScript </tag>
             
             <tag> array </tag>
             
@@ -65,7 +86,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 项目练习 </category>
             
@@ -74,7 +95,7 @@
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> JavaScript </tag>
             
             <tag> css3 </tag>
             
@@ -117,7 +138,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 算法 </category>
             
@@ -146,16 +167,16 @@
       
         <categories>
             
-            <category> javaScript </category>
+            <category> JavaScript </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> 跨域 </tag>
+            <tag> JavaScript </tag>
             
-            <tag> javaScript </tag>
+            <tag> 跨域 </tag>
             
         </tags>
         
@@ -346,7 +367,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 项目练习 </category>
             
@@ -401,7 +422,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 项目练习 </category>
             
@@ -487,7 +508,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 深入理解系列 </category>
             
@@ -496,7 +517,7 @@
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> JavaScript </tag>
             
         </tags>
         
@@ -534,7 +555,7 @@
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> jQuery </category>
             
@@ -841,7 +862,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 设计模式 </category>
             
@@ -912,7 +933,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 数组 </category>
             
@@ -921,7 +942,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> JavaScript </tag>
             
             <tag> array </tag>
             
@@ -983,7 +1004,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 数组 </category>
             
@@ -992,7 +1013,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
         
         <tags>
             
-            <tag> javascript </tag>
+            <tag> JavaScript </tag>
             
             <tag> array </tag>
             
@@ -1028,7 +1049,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
       
         <categories>
             
-            <category> javascript </category>
+            <category> JavaScript </category>
             
             <category> 数组 </category>
             
@@ -1039,7 +1060,7 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
             
             <tag> array </tag>
             
-            <tag> js </tag>
+            <tag> JS </tag>
             
         </tags>
         
