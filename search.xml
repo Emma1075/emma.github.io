@@ -7,7 +7,7 @@
       <url>/posts/791e2dfc/</url>
       <content type="html"><![CDATA[<p>一个 jQuery 插件封装。</p>
 <a id="more"></a>
-<p>demo演示地址：<a href="http://www.sugar1075.online/js-plugin-learning/tab/tab">http://www.sugar1075.online/js-plugin-learning/tab/tab</a></p>
+<p>demo演示地址：<a href="http://www.sugar1075.online/js-plugin-learning/tab/tab">http://www.sugar1075.online/js-plugin-learning/tab/tab</a><br>demo代码地址：<a href="https://github.com/Emma1075/js-plugin-learning" target="_blank" rel="external">https://github.com/Emma1075/js-plugin-learning</a></p>
 <p>自定义参数放在 <code>data-config</code> 中。</p>
 <ul>
 <li><code>traggerType</code>: 鼠标触发类型</li>
@@ -182,9 +182,9 @@
         
         <tags>
             
-            <tag> css3 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> css3 </tag>
             
             <tag> js-project </tag>
             
