@@ -7,11 +7,11 @@
       <url>/posts/e8f7340e/</url>
       <content type="html"><![CDATA[<p>简要讲讲原型与原型链。</p>
 <a id="more"></a>
-<h3 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h3><p>每个对象都有其隐式原型<code>__proto__</code>, 隐式原型指向该对象的构造函数的显式原型。</p>
+<h3 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h3><p>每个对象都有其隐式原型<code>__proto__</code>, 隐式原型指向该对象的构造函数的显式原型 <code>prototype</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="comment">// 对象 p 的构造函数 Person 的显式原型为 Person.prototype,它（即Person.prototype，下述用 a 指代）也是一个对象</span></div><div class="line"><span class="built_in">console</span>.log(p.__proto__ === Person.prototype);	<span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 因此，a 也有隐式原型，其指向 a 的构造函数的显式原型 =&gt; Object.prototype</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.__proto__ === <span class="built_in">Object</span>.prototyoe); 	<span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 同理， Object.prototype 也是一个对象（下述用 b 指代），b 也有隐式原型</span></div><div class="line"><span class="comment">// b.__proto__ 指向 null （最顶层）</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>); 	<span class="comment">// true</span></div></pre></td></tr></table></figure>
 <h3 id="instanceof-方法"><a href="#instanceof-方法" class="headerlink" title="instanceof() 方法"></a><code>instanceof()</code> 方法</h3><p><code>instanceof()</code>方法： 用来判断引用类型属于哪个构造函数</p>
 <p>由上述可得：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">P <span class="keyword">instanceof</span> Person;	<span class="comment">// true</span></div><div class="line">Person <span class="keyword">instanceof</span> <span class="built_in">Function</span>;	<span class="comment">// true</span></div><div class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>;	<span class="comment">// true</span></div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>;</div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">P <span class="keyword">instanceof</span> Person;	<span class="comment">// true</span></div><div class="line">Person <span class="keyword">instanceof</span> <span class="built_in">Function</span>;	<span class="comment">// true</span></div><div class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>;	<span class="comment">// true</span></div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>;	<span class="comment">// true</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -211,9 +211,9 @@
         
         <tags>
             
-            <tag> css3 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> css3 </tag>
             
             <tag> js-project </tag>
             
@@ -994,77 +994,6 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
     </entry>
     
     <entry>
-      <title><![CDATA[array-数组方法(1)]]></title>
-      <url>/posts/5a6f5bf1/</url>
-      <content type="html"><![CDATA[<p>分析对比数组方法 <code>concat()</code>,<code>push()</code>,<code>shift()</code> 与 <code>pop()</code> 的使用。</p>
-<a id="more"></a>
-<h2 id="1-array-concat"><a href="#1-array-concat" class="headerlink" title="1. array.concat"></a>1. <code>array.concat</code></h2><p>语法： <code>var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])</code> </p>
-<p>作用：将别的一个或多个数组与原数组相连接</p>
-<ul>
-<li>返回值： 新数组。（不改变原数组内容）</li>
-<li>是否改变原数组： 否</li>
-<li>是否浅拷贝： 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = arr1.concat(arr2);   </div><div class="line"><span class="built_in">console</span>.log(arr3)；    <span class="comment">//[0,1,2,"a","b","c"]，原数组arr1不受影响</span></div></pre></td></tr></table></figure>
-<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>a. 不同于<code>push</code>，<code>concat</code>多个数组时，只返回一维数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//比较:push()与concat()</span></div><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr4 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr4);      <span class="comment">// [0,1,2,3,4,5]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr5 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr5);      <span class="comment">// 5 push操作返回值是新数组length</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0,1,2,3,[4,5]]   arr1发生改变</span></div></pre></td></tr></table></figure>
-<p>b. shandow copy ：浅拷贝</p>
-<blockquote>
-<p>浅拷贝，只是对指针的拷贝，拷贝后两个指针指向同一个内存空间，深拷贝不但对指针进行拷贝，而且对指针指向的内容进行拷贝，经深拷贝后的指针是指向两个不同地址的指针。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>],arr2);</div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// [0, 1, 2, 3, 4, 5, 6, [7,8]]</span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2[1]的值后，arr3会随之改变</span></div><div class="line">arr2[<span class="number">1</span>].push(<span class="number">9</span>);    <span class="comment">// arr2:[6,[7,8,9]]</span></div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// arr3:[0, 1, 2, 3, 4, 5, 6, [7,8,9]]</span></div><div class="line"></div><div class="line"><span class="comment">//同理：改变arr3[arr3.length-1]的值后，arr2也会随之改变</span></div><div class="line">arr3[arr3.length<span class="number">-1</span>][<span class="number">0</span>] = <span class="number">10</span>;  <span class="comment">// arr3:[0, 1, 2, 3, 4, 5, 6, [10,8,9]]</span></div><div class="line"><span class="built_in">console</span>.log(arr2);      <span class="comment">//arr2: [6,[10,8,9]]</span></div></pre></td></tr></table></figure>
-<hr>
-<h2 id="2-array-push"><a href="#2-array-push" class="headerlink" title="2.array.push"></a>2.<code>array.push</code></h2><p>语法： <code>arr.push(element1, ..., elementN)</code></p>
-<p>作用：在原数组末尾添加元素或数组</p>
-<ul>
-<li>返回值： 新数组length值</li>
-<li>是否改变原数组：是</li>
-<li>是否浅拷贝： 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> newLen_1 = arr1.push(arr2);    <span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1,2,[3,4]] </span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2，arr1会发生改变</span></div><div class="line">arr2.push(<span class="number">5</span>);   <span class="comment">//arr2:[3,4,5]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//arr1:[0,1,2,[3,4,5]]</span></div></pre></td></tr></table></figure>
-<h2 id="3-array-pop"><a href="#3-array-pop" class="headerlink" title="3.array.pop"></a>3.<code>array.pop</code></h2><p>语法： <code>arr.pop()</code></p>
-<p>作用： 删除数组最末尾的元素</p>
-<ul>
-<li>返回值： 删除的元素</li>
-<li>是否改变原数组： 是 </li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> poped = arr1.pop();   </div><div class="line"><span class="built_in">console</span>.log(poped);  <span class="comment">//2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1]</span></div></pre></td></tr></table></figure>
-<h2 id="4-array-unshift"><a href="#4-array-unshift" class="headerlink" title="4.array.unshift"></a>4.<code>array.unshift</code></h2><p>语法：<code>arr.unshift([element1[, ...[, elementN]]])</code></p>
-<p>作用： 在数组最开始位置添加元素（跟<code>push()</code>刚好相反）</p>
-<ul>
-<li>返回值 ：新数组长度</li>
-<li>是否改变原数组： 是</li>
-<li>是否浅拷贝： 是</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> newLen_1 = arr1.unshift(arr2);    <span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[[3,4]，0,1,2] </span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2，arr1会发生改变</span></div><div class="line">arr2.unshift(<span class="number">5</span>);   <span class="comment">//arr2:[5,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//arr1:[[5,3,4],0,1,2]</span></div></pre></td></tr></table></figure>
-<h2 id="5-array-shift"><a href="#5-array-shift" class="headerlink" title="5.array.shift"></a>5.<code>array.shift</code></h2><p>语法：<code>arr.shift()</code></p>
-<p>作用：删除数组第一个元素（同<code>pop()</code>刚好相反）</p>
-<ul>
-<li>返回值： 删除的元素</li>
-<li>是否改变原数组： 是 </li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> poped = arr1.shift();   </div><div class="line"><span class="built_in">console</span>.log(poped);  <span class="comment">//0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[1,2]</span></div></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> JavaScript </category>
-            
-            <category> 数组 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> array </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[array-数组方法(2)]]></title>
       <url>/posts/71420832/</url>
       <content type="html"><![CDATA[<p>深入理解 forEach()，map()；slice()，splice() 四种方法的使用。</p>
@@ -1117,6 +1046,77 @@ NowFrame=<span class="built_in">parseInt</span>(NowFrame) <span class="comment">
 <li>是否为浅拷贝: 是</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="comment">//只删除</span></div><div class="line"><span class="keyword">var</span> delElement1 = arr1.splice(<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//删除arr1中从arr1[1]开始的两个元素</span></div><div class="line"><span class="built_in">console</span>.log(delElement1);    <span class="comment">//[1,2];delElement1.length = 2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,3]</span></div><div class="line"></div><div class="line"><span class="comment">//只增加</span></div><div class="line"><span class="keyword">var</span> delElement2 = arr1.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">5</span>);  <span class="comment">//从arr1[1]开始删除0个元素，并在此位置新增4,5两个元素</span></div><div class="line"><span class="built_in">console</span>.log(delElement2);    <span class="comment">//[]；delElement2.length = 0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,4,5,3]</span></div><div class="line"></div><div class="line"><span class="comment">//只替换</span></div><div class="line"><span class="keyword">var</span> delElement3 = arr1.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//从arr1[1]开始删除2个元素，并在此位置新增1,2两个元素（删除2个再新增2个，即替换）</span></div><div class="line"><span class="built_in">console</span>.log(delElement3);    <span class="comment">//[4,5]；delElement3.length = 2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1,2,3]</span></div><div class="line"></div><div class="line"><span class="comment">//浅拷贝</span></div><div class="line"><span class="keyword">var</span> arrTemp = [<span class="string">"a"</span>,<span class="string">"b"</span>]</div><div class="line"><span class="keyword">var</span> delEle = arr1.splice(<span class="number">1</span>,<span class="number">0</span>,arrTemp);  <span class="comment">//[];delEle.length = 0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0, ["a","b"], 1, 2, 3]</span></div><div class="line">arrTemp.push(<span class="string">"c"</span>);      <span class="comment">//arrTemp:  ["a","b","c"]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0, ["a","b","c"], 1, 2, 3]</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> JavaScript </category>
+            
+            <category> 数组 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> array </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[array-数组方法(1)]]></title>
+      <url>/posts/5a6f5bf1/</url>
+      <content type="html"><![CDATA[<p>分析对比数组方法 <code>concat()</code>,<code>push()</code>,<code>shift()</code> 与 <code>pop()</code> 的使用。</p>
+<a id="more"></a>
+<h2 id="1-array-concat"><a href="#1-array-concat" class="headerlink" title="1. array.concat"></a>1. <code>array.concat</code></h2><p>语法： <code>var newArray = oldArray.concat(value1[, value2[, ...[, valueN]]])</code> </p>
+<p>作用：将别的一个或多个数组与原数组相连接</p>
+<ul>
+<li>返回值： 新数组。（不改变原数组内容）</li>
+<li>是否改变原数组： 否</li>
+<li>是否浅拷贝： 是</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = arr1.concat(arr2);   </div><div class="line"><span class="built_in">console</span>.log(arr3)；    <span class="comment">//[0,1,2,"a","b","c"]，原数组arr1不受影响</span></div></pre></td></tr></table></figure>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>a. 不同于<code>push</code>，<code>concat</code>多个数组时，只返回一维数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//比较:push()与concat()</span></div><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr4 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr4);      <span class="comment">// [0,1,2,3,4,5]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr5 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>]);</div><div class="line"><span class="built_in">console</span>.log(arr5);      <span class="comment">// 5 push操作返回值是新数组length</span></div><div class="line"><span class="built_in">console</span>.log(arr1);      <span class="comment">//[0,1,2,3,[4,5]]   arr1发生改变</span></div></pre></td></tr></table></figure>
+<p>b. shandow copy ：浅拷贝</p>
+<blockquote>
+<p>浅拷贝，只是对指针的拷贝，拷贝后两个指针指向同一个内存空间，深拷贝不但对指针进行拷贝，而且对指针指向的内容进行拷贝，经深拷贝后的指针是指向两个不同地址的指针。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>]];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr3 = arr1.concat(<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>],arr2);</div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// [0, 1, 2, 3, 4, 5, 6, [7,8]]</span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2[1]的值后，arr3会随之改变</span></div><div class="line">arr2[<span class="number">1</span>].push(<span class="number">9</span>);    <span class="comment">// arr2:[6,[7,8,9]]</span></div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// arr3:[0, 1, 2, 3, 4, 5, 6, [7,8,9]]</span></div><div class="line"></div><div class="line"><span class="comment">//同理：改变arr3[arr3.length-1]的值后，arr2也会随之改变</span></div><div class="line">arr3[arr3.length<span class="number">-1</span>][<span class="number">0</span>] = <span class="number">10</span>;  <span class="comment">// arr3:[0, 1, 2, 3, 4, 5, 6, [10,8,9]]</span></div><div class="line"><span class="built_in">console</span>.log(arr2);      <span class="comment">//arr2: [6,[10,8,9]]</span></div></pre></td></tr></table></figure>
+<hr>
+<h2 id="2-array-push"><a href="#2-array-push" class="headerlink" title="2.array.push"></a>2.<code>array.push</code></h2><p>语法： <code>arr.push(element1, ..., elementN)</code></p>
+<p>作用：在原数组末尾添加元素或数组</p>
+<ul>
+<li>返回值： 新数组length值</li>
+<li>是否改变原数组：是</li>
+<li>是否浅拷贝： 是</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> newLen_1 = arr1.push(arr2);    <span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1,2,[3,4]] </span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2，arr1会发生改变</span></div><div class="line">arr2.push(<span class="number">5</span>);   <span class="comment">//arr2:[3,4,5]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//arr1:[0,1,2,[3,4,5]]</span></div></pre></td></tr></table></figure>
+<h2 id="3-array-pop"><a href="#3-array-pop" class="headerlink" title="3.array.pop"></a>3.<code>array.pop</code></h2><p>语法： <code>arr.pop()</code></p>
+<p>作用： 删除数组最末尾的元素</p>
+<ul>
+<li>返回值： 删除的元素</li>
+<li>是否改变原数组： 是 </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> poped = arr1.pop();   </div><div class="line"><span class="built_in">console</span>.log(poped);  <span class="comment">//2</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[0,1]</span></div></pre></td></tr></table></figure>
+<h2 id="4-array-unshift"><a href="#4-array-unshift" class="headerlink" title="4.array.unshift"></a>4.<code>array.unshift</code></h2><p>语法：<code>arr.unshift([element1[, ...[, elementN]]])</code></p>
+<p>作用： 在数组最开始位置添加元素（跟<code>push()</code>刚好相反）</p>
+<ul>
+<li>返回值 ：新数组长度</li>
+<li>是否改变原数组： 是</li>
+<li>是否浅拷贝： 是</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> newLen_1 = arr1.unshift(arr2);    <span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[[3,4]，0,1,2] </span></div><div class="line"></div><div class="line"><span class="comment">//改变arr2，arr1会发生改变</span></div><div class="line">arr2.unshift(<span class="number">5</span>);   <span class="comment">//arr2:[5,3,4]</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//arr1:[[5,3,4],0,1,2]</span></div></pre></td></tr></table></figure>
+<h2 id="5-array-shift"><a href="#5-array-shift" class="headerlink" title="5.array.shift"></a>5.<code>array.shift</code></h2><p>语法：<code>arr.shift()</code></p>
+<p>作用：删除数组第一个元素（同<code>pop()</code>刚好相反）</p>
+<ul>
+<li>返回值： 删除的元素</li>
+<li>是否改变原数组： 是 </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> poped = arr1.shift();   </div><div class="line"><span class="built_in">console</span>.log(poped);  <span class="comment">//0</span></div><div class="line"><span class="built_in">console</span>.log(arr1);  <span class="comment">//[1,2]</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             

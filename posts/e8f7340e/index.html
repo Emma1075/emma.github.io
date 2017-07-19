@@ -97,7 +97,7 @@
 <meta property="og:url" content="www.sugar1075.online/posts/e8f7340e/index.html">
 <meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="简要讲讲原型与原型链。">
-<meta property="og:updated_time" content="2017-07-19T11:19:52.000Z">
+<meta property="og:updated_time" content="2017-07-19T11:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈原型与原型链">
 <meta name="twitter:description" content="简要讲讲原型与原型链。">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  205
+                  207
                 </span>
               
 
@@ -447,11 +447,11 @@
       
         <p>简要讲讲原型与原型链。</p>
 <a id="more"></a>
-<h3 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h3><p>每个对象都有其隐式原型<code>__proto__</code>, 隐式原型指向该对象的构造函数的显式原型。</p>
+<h3 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h3><p>每个对象都有其隐式原型<code>__proto__</code>, 隐式原型指向该对象的构造函数的显式原型 <code>prototype</code>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="comment">// 对象 p 的构造函数 Person 的显式原型为 Person.prototype,它（即Person.prototype，下述用 a 指代）也是一个对象</span></div><div class="line"><span class="built_in">console</span>.log(p.__proto__ === Person.prototype);	<span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 因此，a 也有隐式原型，其指向 a 的构造函数的显式原型 =&gt; Object.prototype</span></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.__proto__ === <span class="built_in">Object</span>.prototyoe); 	<span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 同理， Object.prototype 也是一个对象（下述用 b 指代），b 也有隐式原型</span></div><div class="line"><span class="comment">// b.__proto__ 指向 null （最顶层）</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>); 	<span class="comment">// true</span></div></pre></td></tr></table></figure>
 <h3 id="instanceof-方法"><a href="#instanceof-方法" class="headerlink" title="instanceof() 方法"></a><code>instanceof()</code> 方法</h3><p><code>instanceof()</code>方法： 用来判断引用类型属于哪个构造函数</p>
 <p>由上述可得：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">P <span class="keyword">instanceof</span> Person;	<span class="comment">// true</span></div><div class="line">Person <span class="keyword">instanceof</span> <span class="built_in">Function</span>;	<span class="comment">// true</span></div><div class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>;	<span class="comment">// true</span></div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">P <span class="keyword">instanceof</span> Person;	<span class="comment">// true</span></div><div class="line">Person <span class="keyword">instanceof</span> <span class="built_in">Function</span>;	<span class="comment">// true</span></div><div class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>;	<span class="comment">// true</span></div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>;	<span class="comment">// true</span></div></pre></td></tr></table></figure>
       
     </div>
 
