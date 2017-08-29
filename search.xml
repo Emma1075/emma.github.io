@@ -32,7 +32,6 @@
 <li>其他对象：Function、Arguments、Math、Date、RegExp、Error</li>
 <li>ES6新增对象：Symbol、Map、Set、Promises、Proxy、Reflect</li>
 </ul>
-<hr>
 <h3 id="如何编写高性能的-JavaScript"><a href="#如何编写高性能的-JavaScript" class="headerlink" title="如何编写高性能的 JavaScript"></a>如何编写高性能的 JavaScript</h3><ul>
 <li>使用非阻塞方式下载 js 脚本</li>
 <li>将多个 js 文件成组打包，减少请求数</li>
@@ -100,7 +99,6 @@
 <li>事件绑定</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'start'</span>);</div><div class="line"><span class="keyword">let</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</div><div class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'loaded'</span>);</div><div class="line">&#125;</div><div class="line">img.src = <span class="string">'https://doc.react-china.org/react/img/logo.svg'</span>;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.body.appendChild(img);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'end'</span>);</div><div class="line"></div><div class="line"><span class="comment">// start</span></div><div class="line"><span class="comment">// end</span></div><div class="line"><span class="comment">// undefined</span></div><div class="line"><span class="comment">// loaded</span></div></pre></td></tr></table></figure>
-<hr>
 <h1 id="JS-Web-API"><a href="#JS-Web-API" class="headerlink" title="JS-Web-API"></a>JS-Web-API</h1><p>JS-Web-API 要遵循 W3C 标准</p>
 <p>常说的 JS （浏览器执行的JS）包含两部分：</p>
 <ul>
