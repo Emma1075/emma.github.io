@@ -1,0 +1,1526 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript 的一些基础知识">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 基础">
+<meta property="og:url" content="www.sugar1075.online/posts/e2f52f48/index.html">
+<meta property="og:site_name" content="Sugar&#39;s Blog">
+<meta property="og:description" content="JavaScript 的一些基础知识">
+<meta property="og:updated_time" content="2017-08-29T10:39:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 基础">
+<meta name="twitter:description" content="JavaScript 的一些基础知识">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.sugar1075.online/posts/e2f52f48/"/>
+
+
+
+
+
+  <title>JavaScript 基础 | Sugar's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sugar's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="www.sugar1075.online/posts/e2f52f48/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sugar">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sugar's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript 基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T18:28:47+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/posts/e2f52f48/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,432
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JavaScript 的一些基础知识<br><a id="more"></a></p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="变量类型和计算"><a href="#变量类型和计算" class="headerlink" title="变量类型和计算"></a>变量类型和计算</h2><h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><ul>
+<li>基本数据类型：undefined、null、boolean、number、string、symbol</li>
+<li>引用数据类型：object、array、function</li>
+</ul>
+<h3 id="typeof运算符可得到的结果"><a href="#typeof运算符可得到的结果" class="headerlink" title="typeof运算符可得到的结果"></a><code>typeof</code>运算符可得到的结果</h3><ul>
+<li>string</li>
+<li>number</li>
+<li>object</li>
+<li>function</li>
+<li>undefined</li>
+<li>boolean</li>
+</ul>
+<h3 id="何时用-何时用"><a href="#何时用-何时用" class="headerlink" title="何时用 === 何时用 =="></a>何时用 <code>===</code> 何时用 <code>==</code></h3><p>当且仅当判断值是否为 <code>null</code> 或 <code>undefined</code>时,用 <code>==</code>， 其余时候都用 <code>===</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(a == <span class="literal">null</span>) &#123;...&#125;</div><div class="line"></div><div class="line"><span class="comment">// 相当于</span></div><div class="line"><span class="keyword">if</span>(a === <span class="literal">null</span> || a === <span class="literal">undefined</span>) &#123;...&#125;</div></pre></td></tr></table></figure>
+<h3 id="变量计算"><a href="#变量计算" class="headerlink" title="变量计算"></a>变量计算</h3><h5 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h5><ul>
+<li>字符串拼接</li>
+<li><code>==</code> 运算符</li>
+<li>if 语句</li>
+<li>逻辑运算</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">10</span> &amp;&amp; <span class="number">0</span>) 	<span class="comment">// 0</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">''</span> || <span class="string">'a'</span>) 	<span class="comment">// a</span></div></pre></td></tr></table></figure>
+<h3 id="JS-内置对象"><a href="#JS-内置对象" class="headerlink" title="JS 内置对象"></a>JS 内置对象</h3><ul>
+<li>数据封装类对象：Object、Array、Boolean、Number、String</li>
+<li>其他对象：Function、Arguments、Math、Date、RegExp、Error</li>
+<li>ES6新增对象：Symbol、Map、Set、Promises、Proxy、Reflect</li>
+</ul>
+<hr>
+<h3 id="如何编写高性能的-JavaScript"><a href="#如何编写高性能的-JavaScript" class="headerlink" title="如何编写高性能的 JavaScript"></a>如何编写高性能的 JavaScript</h3><ul>
+<li>使用非阻塞方式下载 js 脚本</li>
+<li>将多个 js 文件成组打包，减少请求数</li>
+<li>将 js 文件放在页面底部，加快渲染页面</li>
+<li>尽量使用局部变量来保存全局变量</li>
+<li>尽量减少使用闭包</li>
+<li>使用 window 对象属性方法时，省略 window</li>
+<li>尽量减少对象成员嵌套</li>
+<li>缓存 DOM 节点的访问，尽量减少对 DOM 的直接操作</li>
+<li>最小化重绘(repaint)和回流(reflow)</li>
+</ul>
+<h3 id="如何最小化重绘-repaint-和回流-reflow-？"><a href="#如何最小化重绘-repaint-和回流-reflow-？" class="headerlink" title="如何最小化重绘(repaint)和回流(reflow)？"></a>如何最小化重绘(repaint)和回流(reflow)？</h3><p>回流：当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。</p>
+<p>重绘：当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如<code>background-color</code>。则就叫称为重绘。</p>
+<p>由此可知：回流一定会引起重绘，但重绘不一定会回流。</p>
+<h4 id="最小化方法"><a href="#最小化方法" class="headerlink" title="最小化方法"></a>最小化方法</h4><ul>
+<li>需要要对元素进行复杂的操作时，可以先隐藏(display:”none”)，操作完成后再显示</li>
+<li>需要创建多个DOM节点时，使用DocumentFragment创建完后一次性的加入document</li>
+<li>缓存Layout属性值，如：var left = elem.offsetLeft; 这样，多次使用 left 只产生一次回流</li>
+<li>尽量避免用table布局（table元素一旦触发回流就会导致table里所有的其它元素回流）</li>
+<li>避免使用css表达式(expression)，因为每次调用都会重新计算值（包括加载页面）</li>
+<li>批量修改元素样式：elem.className 和 elem.style.cssText 代替 elem.style.xxx</li>
+</ul>
+<h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><h3 id="原型规则"><a href="#原型规则" class="headerlink" title="原型规则"></a>原型规则</h3><ol>
+<li>所有的引用类型（Array， Object， Function），都具有对象特性（即： 可自由扩展属性）</li>
+<li>所有的引用类型（Array， Object， Function），都有一个 <code>__proto__</code> 属性（隐式原型），属性值是一个普通的对象</li>
+<li>所有的函数，都有一个 <code>prototype</code> 属性（显式原型），属性值是一个普通的对象</li>
+<li>所有的引用类型（Array， Object， Function）, <code>__proto__</code> 属性值指向它的构造函数的 <code>prototype</code> 属性值</li>
+<li>试图得到对象中的某个属性值时，如果对象中没有这个属性，就会到该对象的 <code>__proto__</code> (即该对象的构造函数的 <code>prototype</code>) 中去寻找</li>
+</ol>
+<h3 id="写一个原型链继承的例子"><a href="#写一个原型链继承的例子" class="headerlink" title="写一个原型链继承的例子"></a>写一个原型链继承的例子</h3><p>封装 dom 查询</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ele</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.ele = <span class="built_in">document</span>.querySelector(<span class="string">`#&#123;id&#125;`</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">Ele.prototype.html = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</div><div class="line">	<span class="keyword">let</span> ele = <span class="keyword">this</span>.ele;</div><div class="line">	<span class="keyword">if</span>(val) &#123;</div><div class="line">		ele.innerHTML = val;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> ele.innerHTML;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">Ele.prototype.on = <span class="function"><span class="keyword">function</span>(<span class="params">type, fn</span>) </span>&#123;</div><div class="line">	<span class="keyword">let</span> ele = <span class="keyword">this</span>.ele;</div><div class="line">	ele.addEventListener(type, fn);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> myDiv = <span class="keyword">new</span> Ele(<span class="string">'mydiv'</span>);</div><div class="line">myDiv.html(<span class="string">'hello world'</span>).on(<span class="string">'click'</span>,() =&gt; &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'clicked'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="描述-new-一个对象的过程"><a href="#描述-new-一个对象的过程" class="headerlink" title="描述 new 一个对象的过程"></a>描述 new 一个对象的过程</h3><ol>
+<li>创建一个对象</li>
+<li>this 指向这个对象</li>
+<li>执行代码，对 this 赋值</li>
+<li>返回 this</li>
+</ol>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><ul>
+<li>范围： 一段 <code>script</code> 或一个函数</li>
+<li>全局： 变量定义，函数声明</li>
+<li>函数： (执行前拿出) 变量定义，函数声明， this， arguments</li>
+</ul>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><blockquote>
+<p>在定义时无法确认值，在执行时才能确认。</p>
+</blockquote>
+<p>this 的不同使用场景：</p>
+<ol>
+<li>作为构造函数执行</li>
+<li>作为对象属性执行</li>
+<li>作为普通函数执行</li>
+<li>call，apply， bind</li>
+</ol>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>实际开发中闭包的应用：</p>
+<ul>
+<li>闭包（函数）作为返回值</li>
+<li>闭包（函数）作为参数传递</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 函数作为返回值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">F1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f1 = F1();</div><div class="line"><span class="keyword">var</span> a = <span class="number">200</span>;</div><div class="line">f1();	<span class="comment">// 100</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 函数作为参数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">F1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a);		<span class="comment">// 声明时的作用域</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">F2</span>(<span class="params">fn</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">200</span>;	<span class="comment">// 执行时的作用域</span></div><div class="line">	fn();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f1 = F1();</div><div class="line">F2(f1);		<span class="comment">// 100</span></div></pre></td></tr></table></figure>
+<p>要点： 函数作用域在声明定义时确定，而非执行时。</p>
+<h2 id="异步和单线程"><a href="#异步和单线程" class="headerlink" title="异步和单线程"></a>异步和单线程</h2><h3 id="同步与异步的区别"><a href="#同步与异步的区别" class="headerlink" title="同步与异步的区别"></a>同步与异步的区别</h3><p>同步会阻塞代码，而异步不会。<br>举例： alert 是同步，setTimeout 是异步</p>
+<h3 id="使用异步的场景-需要等待"><a href="#使用异步的场景-需要等待" class="headerlink" title="使用异步的场景(需要等待)"></a>使用异步的场景(需要等待)</h3><ul>
+<li>定时任务： <code>setInterval</code> <code>setTimeout</code></li>
+<li>网络请求： ajax 请求，动态 img 加载</li>
+<li>事件绑定</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'start'</span>);</div><div class="line"><span class="keyword">let</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</div><div class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'loaded'</span>);</div><div class="line">&#125;</div><div class="line">img.src = <span class="string">'https://doc.react-china.org/react/img/logo.svg'</span>;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.body.appendChild(img);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'end'</span>);</div><div class="line"></div><div class="line"><span class="comment">// start</span></div><div class="line"><span class="comment">// end</span></div><div class="line"><span class="comment">// undefined</span></div><div class="line"><span class="comment">// loaded</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="JS-Web-API"><a href="#JS-Web-API" class="headerlink" title="JS-Web-API"></a>JS-Web-API</h1><p>JS-Web-API 要遵循 W3C 标准</p>
+<p>常说的 JS （浏览器执行的JS）包含两部分：</p>
+<ul>
+<li>JS 基础知识 （ECMA262 标准）</li>
+<li>JS-Web-API    （W3C 标准）</li>
+</ul>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="DOM-是哪种基本的数据结构？"><a href="#DOM-是哪种基本的数据结构？" class="headerlink" title="DOM 是哪种基本的数据结构？"></a>DOM 是哪种基本的数据结构？</h3><p>答案： 树</p>
+<h3 id="DOM-节点操作"><a href="#DOM-节点操作" class="headerlink" title="DOM 节点操作"></a>DOM 节点操作</h3><p>可以这么理解 DOM： 浏览器把拿到的 HTML 代码，结构化为可被浏览器识别并且能被 JS 操作的模型。</p>
+<h3 id="DOM-节点的-attr-和-property-的区别"><a href="#DOM-节点的-attr-和-property-的区别" class="headerlink" title="DOM 节点的 attr 和 property 的区别"></a>DOM 节点的 attr 和 property 的区别</h3><ul>
+<li><p><code>attribute</code>：翻译为“特性”。<code>attribute</code>是HTML标签上的特性，它的值只能够是字符串；</p>
+<ul>
+<li><code>attribute</code> 就是 DOM 节点自带的属性，例如html中常用的<code>id</code>、<code>class</code>、<code>title</code> 、<code>align</code> 等</li>
+<li>常用的 <code>attribute</code>，例如 <code>id</code>、<code>class</code>、<code>title</code> 等，已经被作为Property附加到DOM对象上，可以和Property一样取值和赋值。但是自定义的Attribute，就不会有这样的特殊优待。</li>
+<li><code>attributes</code> 是属于 <code>property</code> 的一个子集，它保存了HTML标签上定义属性</li>
+</ul>
+</li>
+<li><p><code>property</code>： 翻译为“属性”。<code>property</code>是DOM中的属性，是JavaScript里的对象；</p>
+<ul>
+<li>Property是这个DOM元素作为对象，其附加的内容，例如childNodes、firstChild等</li>
+<li>property 只是 JS 对象属性的修改</li>
+</ul>
+</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="写一个通用的事件绑定函数"><a href="#写一个通用的事件绑定函数" class="headerlink" title="写一个通用的事件绑定函数"></a>写一个通用的事件绑定函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> eventUtil = &#123;</div><div class="line"> 	<span class="comment">// 添加事件</span></div><div class="line">	addEvent(ele, type, fn) =&gt; &#123;</div><div class="line">		<span class="keyword">if</span>(ele.addEventListener) &#123;</div><div class="line">			ele.addEventListener(type, fn, <span class="literal">false</span>)</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(ele.attachEvent) &#123;</div><div class="line">			ele.attachEvent(<span class="string">'on'</span> + type, fn)</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			ele[<span class="string">'on'</span> + type] = fn;</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 移除事件</span></div><div class="line">	removeEvent(ele, type, fn) =&gt; &#123;</div><div class="line">		<span class="keyword">if</span>(ele.removeEventListener) &#123;</div><div class="line">			ele.removeEventListener(type, fn, <span class="literal">false</span>)</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(ele.detachEvent) &#123;</div><div class="line">			ele.detachEvent(<span class="string">'on'</span> + type, fn)</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			ele[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	getEvent(event) =&gt; &#123;</div><div class="line">		<span class="keyword">return</span> event || <span class="built_in">window</span>.event;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	getTarget(event) =&gt; &#123;</div><div class="line">		<span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 阻止事件冒泡</span></div><div class="line">	stopPropagation(event) =&gt; &#123;</div><div class="line">		<span class="keyword">if</span>(event.stopPropagation) &#123;</div><div class="line">			event.stopPropagation();</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			event.cancelBubble = <span class="literal">true</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 阻止默认行为</span></div><div class="line">	preventDefault(event) =&gt; &#123;</div><div class="line">		<span class="keyword">if</span>(event.preventDefault) &#123;</div><div class="line">			event.preventDefault();</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			event.returnValue = <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h3><p>写一个可实现事件代理的通用函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> bindEvent = <span class="function">(<span class="params">ele, type, selector, fn</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">if</span>(fn == <span class="literal">null</span>) &#123;</div><div class="line">		fn = selector;</div><div class="line">		selector = <span class="literal">null</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	ele.addEventListener(type, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> target;</div><div class="line">		<span class="keyword">if</span>(selector) &#123;</div><div class="line">			target = e.target;</div><div class="line">			<span class="keyword">if</span>(target.matches(selector)) &#123;</div><div class="line">				fn.call(target, e)</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				fn(e)</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>事件代理的好处： </p>
+<ul>
+<li>代码更简洁</li>
+<li>减少浏览器内存占用</li>
+</ul>
+<h3 id="简述事件冒泡与事件捕获"><a href="#简述事件冒泡与事件捕获" class="headerlink" title="简述事件冒泡与事件捕获"></a>简述事件冒泡与事件捕获</h3><ul>
+<li>事件捕获：指的是从<code>document</code>到触发事件的那个节点，即自上而下的去触发事件。</li>
+<li>事件冒泡：指的是从触发事件的那个节点到<code>document</code>， 是自下而上的去触发事件。</li>
+<li>绑定事件方法的第三个参数，就是控制事件触发顺序是否为事件捕获。true,事件捕获；false,事件冒泡。默认false,即事件冒泡。</li>
+</ul>
+<h2 id="Ajax与跨域"><a href="#Ajax与跨域" class="headerlink" title="Ajax与跨域"></a>Ajax与跨域</h2><h3 id="写一个原生的-ajax-请求"><a href="#写一个原生的-ajax-请求" class="headerlink" title="写一个原生的 ajax 请求"></a>写一个原生的 ajax 请求</h3><p>极简版</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXHR</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ActiveObject(<span class="string">'Microsoft.XMLHTTP'</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xhr = createXHR();</div><div class="line"></div><div class="line">xhr.open(<span class="string">'get'</span>, url, <span class="literal">false</span>);</div><div class="line"></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(xhr.readystate == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</div><div class="line">		<span class="built_in">console</span>.log(xhr.responseText);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'error'</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure>
+<p>豪华版（使用方式类似于jQuery）<br><a href="https://segmentfault.com/a/1190000007597494" target="_blank" rel="external">参考</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用</span></div><div class="line">ajax(&#123;</div><div class="line">    <span class="attr">url</span>:<span class="string">""</span>, <span class="comment">//请求地址</span></div><div class="line">    type:<span class="string">'GET'</span>,   <span class="comment">//请求方式</span></div><div class="line">    data:&#123;<span class="attr">name</span>:<span class="string">'zhangsan'</span>,<span class="attr">age</span> :<span class="string">'23'</span>,<span class="attr">email</span>:<span class="string">'2372734044@qq.com'</span>&#125;, <span class="comment">//请求参数</span></div><div class="line">    dataType:<span class="string">"json"</span>,     <span class="comment">// 返回值类型的设定</span></div><div class="line">    <span class="keyword">async</span>:<span class="literal">false</span>,   <span class="comment">//是否异步</span></div><div class="line">    success:<span class="function"><span class="keyword">function</span> (<span class="params">response,xml</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(response);   <span class="comment">//   此处执行请求成功后的代码</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">fail</span>:<span class="function"><span class="keyword">function</span> (<span class="params">status</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'状态码为'</span>+status);   <span class="comment">// 此处为执行成功后的代码</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">opts</span>) </span>&#123;</div><div class="line">	opts = opts || &#123;&#125;;</div><div class="line">	</div><div class="line">	opts.type = (opts.type || <span class="string">'GET'</span>).toUpperCase();</div><div class="line">	opts.dataType = opts.dataType || <span class="string">'json'</span>;</div><div class="line">	</div><div class="line">	<span class="comment">// 默认为异步请求</span></div><div class="line">	opts.async = opts.async || <span class="literal">true</span>;</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> params = getParam(opts.data);</div><div class="line">	</div><div class="line">	<span class="keyword">var</span> xhr;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">		xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		xhr = <span class="keyword">new</span> ActiveObject(<span class="string">'Microsoft XMLHTTP'</span>)</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">if</span>(xhr.readystate == <span class="number">4</span>) &#123;</div><div class="line">			<span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) &#123;</div><div class="line">				opts.success &amp;&amp; opts.success(xhr.responseText);</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			opts.fail &amp;&amp; opts.fail(xhr.status)</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="keyword">if</span>(opts.type == <span class="string">'GET'</span>) &#123;</div><div class="line">		xhr.open(<span class="string">'GET'</span>, opts.url + <span class="string">'?'</span> + params, opts.async);</div><div class="line">		xhr.send(<span class="literal">null</span>);</div><div class="line">	</div><div class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(opts.type == <span class="string">'POST'</span>) &#123;</div><div class="line">		xhr.open(<span class="string">'POST'</span>, opts.url, opts.async);</div><div class="line">		</div><div class="line">		<span class="comment">// POST请求设置请求头</span></div><div class="line">		xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>)</div><div class="line">        </div><div class="line">		xhr.send(params);</div><div class="line">	</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getParam</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> param = [];</div><div class="line">	<span class="keyword">for</span>(item <span class="keyword">in</span> data) &#123;</div><div class="line">		param.push(item + <span class="string">'='</span> + data[item])</div><div class="line">	&#125;</div><div class="line">	param.push(<span class="string">'t='</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime());</div><div class="line">	<span class="keyword">return</span> param.join(<span class="string">'&amp;'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="readystate属性"><a href="#readystate属性" class="headerlink" title="readystate属性"></a><code>readystate</code>属性</h4><ul>
+<li>0 =&gt; 未初始化。 尚未调用 <code>open</code> 方法</li>
+<li>1 =&gt; 启动。 已经调用 <code>open</code> 方法， 但尚未调用 <code>send</code> 方法</li>
+<li>2 =&gt; 发送。 已经调用 <code>send</code> 方法， 但尚未接收到响应</li>
+<li>3 =&gt; 接收。 已经接收到部分响应数据</li>
+<li>4 =&gt; 完成。 已经接收到全部相应数据。</li>
+</ul>
+<h4 id="status-状态码"><a href="#status-状态码" class="headerlink" title="status 状态码"></a><code>status</code> 状态码</h4><ul>
+<li>2XX =&gt; 表示成功处理请求。 如 200</li>
+<li>3XX =&gt; 需要重定向。浏览器直接跳转。如 304 （未修改） 自从上次请求后，请求的网页未被修改过</li>
+<li>4XX =&gt; 客户端请求错误。 如 404</li>
+<li>5XX =&gt; 服务端错误<ul>
+<li>500（服务器内部错误）  服务器遇到错误，无法完成请求。 </li>
+<li>504（网关超时）  服务器作为网关或代理，未及时从上游服务器接收请求。 </li>
+<li>505（HTTP 版本不受支持） 服务器不支持请求中所使用的 HTTP 协议版本。 </li>
+</ul>
+</li>
+</ul>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>浏览器有同源策略，不允许 <code>ajax</code> 访问其他域接口。</p>
+<p>同源策略： 同协议， 同端口， 同域名</p>
+<p>所以的跨域请求都必须经过信息提供方的允许。</p>
+<p>可以跨域的 3 个标签: <code>&lt;img&gt;</code>的src（获取图片），<code>&lt;link&gt;</code>的href（获取css），<code>&lt;script&gt;</code>的src（获取javascript）这三个都不符合同源策略，它们可以跨域获取数据.<br>JSONP就是利用<code>&lt;script&gt;</code>的src来实现跨域获取数据的。</p>
+<h4 id="JSONP-跨域"><a href="#JSONP-跨域" class="headerlink" title="JSONP 跨域"></a>JSONP 跨域</h4><p>原理： 动态创建 <code>&lt;script&gt;</code> 标签，利用<code>&lt;script&gt;</code> 的 src 不受同源策略约束来跨域获取数据。</p>
+<h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><h3 id="cookie、localStorage、sessionStorage"><a href="#cookie、localStorage、sessionStorage" class="headerlink" title="cookie、localStorage、sessionStorage"></a>cookie、localStorage、sessionStorage</h3><h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><ul>
+<li>本身用于客户端与服务端通信</li>
+<li>存储在用户本地终端上的数据</li>
+<li>使用 <code>document.cookie = ...</code> 来进行获取和修改</li>
+<li>一般应用最典型的案列就是判断注册用户是否已经登过该网站</li>
+</ul>
+<p>缺点</p>
+<ol>
+<li>存储量小，只有 4kb</li>
+<li>所有 http 请求都要带上，影响获取资源的效率</li>
+<li>API 过于简单，需要封装才能使用</li>
+</ol>
+<h4 id="localStorage-与-sessionStorage"><a href="#localStorage-与-sessionStorage" class="headerlink" title="localStorage 与 sessionStorage"></a>localStorage 与 sessionStorage</h4><ul>
+<li>HTML5 专门为存储设计的，最大容量 5M</li>
+<li>API 简单易用<ul>
+<li><code>localStorage.setItem(key, value)</code>, <code>localStorage.getItem(key)</code></li>
+</ul>
+</li>
+</ul>
+<p>localStorage 与 sessionStorage 区别</p>
+<ul>
+<li>sessionStorage —— 针对一个 session 的数据存储,当用户关闭浏览器窗口后，数据会被删除。</li>
+<li>localStorage - 没有时间限制的数据存储,第二天、第二周或下一年之后，数据依然可用。</li>
+</ul>
+<h4 id="三者异同"><a href="#三者异同" class="headerlink" title="三者异同"></a>三者异同</h4><p>同：都是保存在浏览器端，且同源的。</p>
+<p>异： </p>
+<ol>
+<li>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</li>
+<li>cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。</li>
+<li>存储大小限制也不同<ul>
+<li>cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。</li>
+<li>sessionStorage和localStorage可以达到5M或更大。</li>
+</ul>
+</li>
+<li>数据有效期不同<ul>
+<li>sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；</li>
+<li>localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据</li>
+<li>cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。</li>
+</ul>
+</li>
+<li>作用域不同<ul>
+<li>sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；</li>
+<li>localStorage 在所有同源窗口中都是共享的；</li>
+<li>cookie也是在所有同源窗口中都是共享的。</li>
+</ul>
+</li>
+</ol>
+<h2 id="页面加载过程"><a href="#页面加载过程" class="headerlink" title="页面加载过程"></a>页面加载过程</h2><h3 id="从输入-url-到得到-html-的过程"><a href="#从输入-url-到得到-html-的过程" class="headerlink" title="从输入 url 到得到 html 的过程"></a>从输入 url 到得到 html 的过程</h3><h4 id="加载一个资源的过程"><a href="#加载一个资源的过程" class="headerlink" title="加载一个资源的过程"></a>加载一个资源的过程</h4><ol>
+<li>浏览器根据 DNS 服务器得到域名的 IP 地址</li>
+<li>向这个 IP 的机器发送 http 请求</li>
+<li>服务器收到、处理并返回 http 请求</li>
+<li>浏览器得到返回内容</li>
+</ol>
+<h4 id="浏览器渲染页面的过程"><a href="#浏览器渲染页面的过程" class="headerlink" title="浏览器渲染页面的过程"></a>浏览器渲染页面的过程</h4><ol>
+<li>根据 html 结构生成 DOM tree</li>
+<li>根据 css 生成 CSSOM </li>
+<li>将 DOM 与 CSSOM 整合起来，得到 Render tree</li>
+<li>根据 Render tree 开始渲染和展示</li>
+<li>遇到 <code>&lt;script&gt;</code> 时， 会执行并阻塞渲染</li>
+</ol>
+<p>思考： 为什么要将 css 文件放在 <code>header</code> 中？<br>提高性能。提前渲染出 CSSOM。</p>
+<h3 id="window-onload-与-DOMContendLoaded"><a href="#window-onload-与-DOMContendLoaded" class="headerlink" title="window.onload 与 DOMContendLoaded"></a>window.onload 与 DOMContendLoaded</h3><ul>
+<li><code>window.onload</code> 要等页面的全部资源加载完才执行（包括图片与视频）</li>
+<li><code>document.addEventListener(&#39;DOMContendLoaded&#39;, fn)</code> DOM 渲染完即可执行。（此时 图片和视频还未加载完 ）。 类似于 <code>jQuery</code> 中的 <code>$.ready()</code> 事件</li>
+</ul>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ul>
+<li>多使用内存，缓存 或其他方法</li>
+<li>减少 CPU 计算，减少网络请求</li>
+</ul>
+<h3 id="入手点"><a href="#入手点" class="headerlink" title="入手点"></a>入手点</h3><ul>
+<li>加载页面与静态资源<ul>
+<li>静态资源压缩合并</li>
+<li>静态资源缓存</li>
+<li>使用 CDN， 让资源加载更快</li>
+<li>使用 SSR 后端渲染，让数据直接输出到 HTML 中</li>
+</ul>
+</li>
+<li>页面渲染<ul>
+<li>CSS 放前面， JS 放后面</li>
+<li>图片懒加载 （下拉刷新）</li>
+<li>减少 DOM 查询， 将查询结果缓存起来</li>
+<li>减少 DOM 操作， 多个操作尽量合并在一起执行</li>
+<li>事件节流</li>
+<li>尽早执行操作（如 DOMContendLoaded）</li>
+</ul>
+</li>
+</ul>
+<h4 id="事件节流"><a href="#事件节流" class="headerlink" title="事件节流"></a>事件节流</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> processer = &#123;</div><div class="line">	<span class="attr">timeoutId</span>: <span class="literal">null</span>,</div><div class="line">	</div><div class="line">	<span class="comment">// 实际进行处理的方法</span></div><div class="line">	activeProcess: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">// 实际执行的代码</span></div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 初始调用的方法</span></div><div class="line">	process: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		clearTimeout(timeoutId);</div><div class="line">		</div><div class="line">		<span class="keyword">var</span> _self = <span class="keyword">this</span>;</div><div class="line">		</div><div class="line">		<span class="keyword">this</span>.timeoutId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			_self.activeProcess();</div><div class="line">		&#125;, <span class="number">100</span>)</div><div class="line">		</div><div class="line">		<span class="comment">// timeoutId = setTimeout(() =&gt; activeProcess(), 100)</span></div><div class="line">		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/4a313e78/" rel="next" title="JS作用域与上下文">
+                <i class="fa fa-chevron-left"></i> JS作用域与上下文
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="sugar" />
+          <p class="site-author-name" itemprop="name">sugar</p>
+           
+              <p class="site-description motion-element" itemprop="description">stay hungry, stay foolish.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Emma1075" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/iqeqshuang-di-huan-zhe" target="_blank" title="知乎">
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量类型和计算"><span class="nav-number">1.1.</span> <span class="nav-text">变量类型和计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量类型"><span class="nav-number">1.1.1.</span> <span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof运算符可得到的结果"><span class="nav-number">1.1.2.</span> <span class="nav-text">typeof运算符可得到的结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时用-何时用"><span class="nav-number">1.1.3.</span> <span class="nav-text">何时用 === 何时用 ==</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量计算"><span class="nav-number">1.1.4.</span> <span class="nav-text">变量计算</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#强制类型转换"><span class="nav-number">1.1.4.0.1.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-内置对象"><span class="nav-number">1.1.5.</span> <span class="nav-text">JS 内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何编写高性能的-JavaScript"><span class="nav-number">1.1.6.</span> <span class="nav-text">如何编写高性能的 JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何最小化重绘-repaint-和回流-reflow-？"><span class="nav-number">1.1.7.</span> <span class="nav-text">如何最小化重绘(repaint)和回流(reflow)？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最小化方法"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">最小化方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型与原型链"><span class="nav-number">1.2.</span> <span class="nav-text">原型与原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原型规则"><span class="nav-number">1.2.1.</span> <span class="nav-text">原型规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个原型链继承的例子"><span class="nav-number">1.2.2.</span> <span class="nav-text">写一个原型链继承的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述-new-一个对象的过程"><span class="nav-number">1.2.3.</span> <span class="nav-text">描述 new 一个对象的过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域"><span class="nav-number">1.3.</span> <span class="nav-text">作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行上下文"><span class="nav-number">1.3.1.</span> <span class="nav-text">执行上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">1.3.2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">1.3.3.</span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步和单线程"><span class="nav-number">1.4.</span> <span class="nav-text">异步和单线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步与异步的区别"><span class="nav-number">1.4.1.</span> <span class="nav-text">同步与异步的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用异步的场景-需要等待"><span class="nav-number">1.4.2.</span> <span class="nav-text">使用异步的场景(需要等待)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS-Web-API"><span class="nav-number">2.</span> <span class="nav-text">JS-Web-API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">2.1.</span> <span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-是哪种基本的数据结构？"><span class="nav-number">2.1.1.</span> <span class="nav-text">DOM 是哪种基本的数据结构？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-节点操作"><span class="nav-number">2.1.2.</span> <span class="nav-text">DOM 节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-节点的-attr-和-property-的区别"><span class="nav-number">2.1.3.</span> <span class="nav-text">DOM 节点的 attr 和 property 的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">2.2.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个通用的事件绑定函数"><span class="nav-number">2.2.1.</span> <span class="nav-text">写一个通用的事件绑定函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件代理"><span class="nav-number">2.2.2.</span> <span class="nav-text">事件代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简述事件冒泡与事件捕获"><span class="nav-number">2.2.3.</span> <span class="nav-text">简述事件冒泡与事件捕获</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax与跨域"><span class="nav-number">2.3.</span> <span class="nav-text">Ajax与跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个原生的-ajax-请求"><span class="nav-number">2.3.1.</span> <span class="nav-text">写一个原生的 ajax 请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#readystate属性"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">readystate属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#status-状态码"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">status 状态码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域"><span class="nav-number">2.3.2.</span> <span class="nav-text">跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSONP-跨域"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">JSONP 跨域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储"><span class="nav-number">2.4.</span> <span class="nav-text">存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie、localStorage、sessionStorage"><span class="nav-number">2.4.1.</span> <span class="nav-text">cookie、localStorage、sessionStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage-与-sessionStorage"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">localStorage 与 sessionStorage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三者异同"><span class="nav-number">2.4.1.3.</span> <span class="nav-text">三者异同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面加载过程"><span class="nav-number">2.5.</span> <span class="nav-text">页面加载过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从输入-url-到得到-html-的过程"><span class="nav-number">2.5.1.</span> <span class="nav-text">从输入 url 到得到 html 的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载一个资源的过程"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">加载一个资源的过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器渲染页面的过程"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">浏览器渲染页面的过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-onload-与-DOMContendLoaded"><span class="nav-number">2.5.2.</span> <span class="nav-text">window.onload 与 DOMContendLoaded</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">2.6.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#入手点"><span class="nav-number">2.6.1.</span> <span class="nav-text">入手点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件节流"><span class="nav-number">2.6.1.1.</span> <span class="nav-text">事件节流</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sugar</span>
+</div>
+
+<!-- 
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+ -->
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  <a href="https://github.com/emma1075"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "a5403c09db21417aba82c794cd3ff985",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="bg_content">
+       <canvas id="canvas"></canvas>
+  </div>
+
+  <script type="text/javascript">
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    var Circle = function () {
+       function Circle(x, y) {
+            _classCallCheck(this, Circle);
+
+            this.x = x;
+            this.y = y;
+            this.r = Math.random() * 10;
+            this._mx = Math.random();
+            this._my = Math.random();
+        }
+
+       _createClass(Circle, [{
+            key: 'drawCircle',
+            value: function drawCircle(ctx) {
+                ctx.beginPath();
+                //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+                ctx.arc(this.x, this.y, this.r, 0, 360);
+                ctx.closePath();
+                ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+                ctx.fill();
+            }
+        }, {
+            key: 'drawLine',
+            value: function drawLine(ctx, _circle) {
+                var dx = this.x - _circle.x;
+                var dy = this.y - _circle.y;
+                var d = Math.sqrt(dx * dx + dy * dy);
+                if (d < 150) {
+                    ctx.beginPath();
+
+                    ctx.moveTo(this.x, this.y); //起始点
+                    ctx.lineTo(_circle.x, _circle.y); //终点
+                    ctx.closePath();
+                    ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                    ctx.stroke();
+                }
+            }
+
+
+        }, {
+            key: 'move',
+            value: function move(w, h) {
+                this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
+                this._my = this.y < h && this.y > 0 ? this._my : -this._my;
+                this.x += this._mx / 2;
+                this.y += this._my / 2;
+            }
+        }]);
+
+        return Circle;
+    }();
+
+
+
+    var currentCirle = function (_Circle) {
+        _inherits(currentCirle, _Circle);
+
+        function currentCirle(x, y) {
+            _classCallCheck(this, currentCirle);
+
+            return _possibleConstructorReturn(this, (currentCirle.__proto__ || Object.getPrototypeOf(currentCirle)).call(this, x, y));
+        }
+
+        _createClass(currentCirle, [{
+            key: 'drawCircle',
+            value: function drawCircle(ctx) {
+                ctx.beginPath();
+
+                //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+                this.r = 8;
+                ctx.arc(this.x, this.y, this.r, 0, 360);
+                ctx.closePath();
+                //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+                ctx.fillStyle = 'rgba(255, 77, 54, 0.6)';
+                ctx.fill();
+            }
+        }]);
+
+        return currentCirle;
+    }(Circle);
+
+
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width = canvas.offsetWidth;
+    var h = canvas.height = canvas.offsetHeight;
+    var circles = [];
+    var current_circle = new currentCirle(0, 0);
+
+    var draw = function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].move(w, h);
+            circles[i].drawCircle(ctx);
+            for (j = i + 1; j < circles.length; j++) {
+                circles[i].drawLine(ctx, circles[j]);
+            }
+        }
+        if (current_circle.x) {
+            current_circle.drawCircle(ctx);
+            for (var k = 1; k < circles.length; k++) {
+                current_circle.drawLine(ctx, circles[k]);
+            }
+        }
+        requestAnimationFrame(draw);
+    };
+
+    var init = function init(num) {
+        for (var i = 0; i < num; i++) {
+            circles.push(new Circle(Math.random() * w, Math.random() * h));
+        }
+        draw();
+    };
+    window.addEventListener('load', init(60));
+    window.onmousemove = function (e) {
+        e = e || window.event;
+        current_circle.x = e.clientX;
+        current_circle.y = e.clientY;
+    };
+    window.onmouseout = function () {
+        current_circle.x = null;
+        current_circle.y = null;
+    };
+  </script>
+</body>
+</html>

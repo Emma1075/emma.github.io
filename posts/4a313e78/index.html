@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Sugar&#39;s Blog">
 <meta property="og:description" content="作用域是指程序源代码中定义变量的区域，可分为静态作用域与动态作用域两种。静态作用域又名词法作用域，表明函数作用域在定义时被决定。与之相对的动态作用域，则表明函数作用域在调用时被决定。">
 <meta property="og:image" content="https://dn-mhke0kuv.qbox.me/db47ce1be79186fcb924.jpg">
-<meta property="og:updated_time" content="2017-07-04T07:27:24.000Z">
+<meta property="og:updated_time" content="2017-07-21T04:00:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS作用域与上下文">
 <meta name="twitter:description" content="作用域是指程序源代码中定义变量的区域，可分为静态作用域与动态作用域两种。静态作用域又名词法作用域，表明函数作用域在定义时被决定。与之相对的动态作用域，则表明函数作用域在调用时被决定。">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T15:40:10+08:00">
-                2017-05-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-20T15:40:10+08:00">
+                2017-07-20
               </time>
             
 
@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,495
+                  1,596
                 </span>
               
 
@@ -450,7 +450,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://dn-mhke0kuv.qbox.me/db47ce1be79186fcb924.jpg" rel="gallery_cj5ax4a3p000005fyhdpy2pai"
+                 href="https://dn-mhke0kuv.qbox.me/db47ce1be79186fcb924.jpg" rel="gallery_cj6xgolmw0000gdfyuck6l3n9"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://dn-mhke0kuv.qbox.me/db47ce1be79186fcb924.jpg" itemprop="contentUrl"/>
               </a>
@@ -467,6 +467,10 @@
 <a id="more"></a>
 <h2 id="词法作用域与动态作用域"><a href="#词法作用域与动态作用域" class="headerlink" title="词法作用域与动态作用域"></a>词法作用域与动态作用域</h2><p><code>javascript</code> 采用的是词法作用域，即作用域在定义时被决定。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'Jack'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">// foo 函数内部无 name 变量，向上查找。</span></div><div class="line">	<span class="comment">// 此时 foo 函数作用域已在定义时确定（ name 的值为 jack）</span></div><div class="line">	<span class="built_in">console</span>.log(name);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">// bar 函数内部定义变量 name，值为 Bob</span></div><div class="line">	<span class="keyword">var</span> name = <span class="string">'Bob'</span>;</div><div class="line">	<span class="comment">// 调用 foo 函数。foo 函数的作用域在定义时被决定。</span></div><div class="line">	<span class="comment">// 即 name 值已被定义好（'Jack'), 跟何时何地调用无关。</span></div><div class="line">	foo();  <span class="comment">// 得到 'jack'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">bar(); <span class="comment">// 得到 'jack'</span></div></pre></td></tr></table></figure>
+<p>例子二</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a);		<span class="comment">// a 的值为100， 在定义时被决定</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> fn1 = fn();</div><div class="line"><span class="keyword">var</span> a = <span class="number">200</span>;</div><div class="line">fn1();		<span class="comment">// 100. 函数作用域在定义时被决定而不是执行时决定</span></div></pre></td></tr></table></figure>
+<p>例子三</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">100</span>;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(a);		<span class="comment">// a 的值为100， 在定义时被决定</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> fn1 = fn();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">f</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> a = <span class="number">200</span>;</div><div class="line">	f();	<span class="comment">// 同样与执行时无关</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">fn2(fn1);	<span class="comment">// 100</span></div></pre></td></tr></table></figure>
 <h2 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h2><p> JavaScript 引擎并非一行一行地分析和执行程序，而是一段一段地分析执行。</p>
 <p> JavaScript 的可执行代码分为三种类型： 全局代码， 函数代码 和 eval 代码。当J avaScript 执行一段可执行代码时， 会创建“执行上下文”。 为了管理被创建的“执行上下文”， JavaScript 引擎创建了“执行上下文栈”（ECS）。</p>
 <p>执行上下文栈：后进先出。可以用<code>array</code>模拟: <code>ECStack = [];</code></p>
@@ -569,8 +573,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/8687d30e/" rel="next" title="编写一个简单的jQuery插件">
-                <i class="fa fa-chevron-left"></i> 编写一个简单的jQuery插件
+              <a href="/posts/e8f7340e/" rel="next" title="浅谈原型与原型链">
+                <i class="fa fa-chevron-left"></i> 浅谈原型与原型链
               </a>
             
           </div>
@@ -579,8 +583,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/df6c53af/" rel="prev" title="javascript30-模拟打鼓效果">
-                javascript30-模拟打鼓效果 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/e2f52f48/" rel="prev" title="JavaScript 基础">
+                JavaScript 基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -656,7 +660,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
