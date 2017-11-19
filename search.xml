@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title><![CDATA[text.md]]></title>
+      <url>/posts/58d2f22b/</url>
+      <content type="html"><![CDATA[<p>it is a test.</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[拖拽例子理解继承]]></title>
       <url>/posts/a440e2bf/</url>
       <content type="html"><![CDATA[<p>通过一个拖拽的例子理解继承<br><a id="more"></a></p>
